@@ -6,6 +6,6 @@ export default defineConfig({
 	plugins: [react()],
 	base: '/templete-v1/', // Reemplaza 'templete-v1' con el nombre de tu repositorio
 	build: {
-		outDir: 'build', // O usa 'dist' si prefieres
+		outDir: 'dist', // O usa 'dist' si prefieres
 	},
 });
