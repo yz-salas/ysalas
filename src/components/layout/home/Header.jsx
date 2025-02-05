@@ -14,7 +14,7 @@ const Header = () => {
 					<p className="text-zinc-300 text-[5vw] sm:text-[30px] md:text-[40px] lg:text-[50px] font-serif">Front - End Developer</p>
 				</div>
 
-				<ButtomP title="slite" url="#aboutus" flecha="⭣" />
+				<ButtomP title="slite" url="#about" flecha="⭣" />
 			</header>
 		</>
 	);

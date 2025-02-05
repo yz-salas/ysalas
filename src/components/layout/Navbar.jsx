@@ -24,7 +24,7 @@ const Navbar = () => {
 				{/* Links */}
 				<ul className="flex flex-col items-center font-serif">
 					<div className="space-y-9 w-32 font-serif font-500">
-						{['Home', 'About us', 'Service', 'Project', 'Skills', 'Contact'].map((item, index) => (
+						{['Home', 'About', 'Service', 'Project', 'Skills', 'Contact'].map((item, index) => (
 							<li key={index} className="group flex items-center text-white/35 hover:text-green-400/100">
 								<hr className="w-6 opacity-0 group-hover:opacity-100 transition-opacity mr-2" />
 								<a

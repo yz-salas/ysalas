@@ -50,7 +50,7 @@ const Content = () => {
 	return (
 		<main className="container flex">
 			<div id="sidebar" className="flex flex-col space-y-72">
-				<section id="about us" className="w-full flex flex-col lg:flex-row min-h-screen font-serif ">
+				<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-serif ">
 					{/* Contenedor izquierdo */}
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
 						<h1 className="text-[50px] sticky top-36 text-green-400 ">
