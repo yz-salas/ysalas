@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
 	plugins: [react()],
-	base: '/ysalas/', // Nombre de tu repositorio
+	base: '/', // Nombre de tu repositorio
 	build: {
 		outDir: 'dist', // Asegurar que la carpeta de salida es 'dist'
 	},
