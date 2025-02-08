@@ -17,7 +17,7 @@ const Navbar = () => {
 
 			{/* Sidebar */}
 			<nav
-				className={`flex justify-center items-center bg-black fixed xl:sticky top-0 xl:top-4 xl:left-4 min-h-screen xl:h-[calc(100vh-2rem)] p-5 shadow-lg transform z-10 ${
+				className={`flex justify-center items-center fixed xl:sticky top-0 xl:top-4 xl:left-4 min-h-screen xl:h-[calc(100vh-2rem)] p-5 shadow-lg transform z-10 ${
 					isOpen ? 'translate-x-0' : '-translate-x-full'
 				} xl:translate-x-0 transition-transform duration-300 w-64 rounded-lg xl:flex xl:flex-col`}
 			>

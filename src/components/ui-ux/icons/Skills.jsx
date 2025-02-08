@@ -15,7 +15,7 @@ const skills = [
 export default function SkillsSection() {
 	return (
 		<section className="py-10 space-y-10">
-			<h2 className="text-[20px] text-green-400 mb-6">Mis Habilidades</h2>
+			<h2 className="text-[20px] md:text-[30px] text-green-400 mb-6">These are the technologies I use</h2>
 			<hr className="w-[100px]" />
 			<div className="flex flex-wrap gap-10 w-[70%]">
 				{skills.map((skill, index) => (
