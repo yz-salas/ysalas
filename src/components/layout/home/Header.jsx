@@ -11,7 +11,9 @@ const Header = () => {
 				</div>
 
 				<div className="w-full text-center md:text-start">
-					<p className="text-zinc-300 text-[5vw] sm:text-[30px] md:text-[40px] lg:text-[50px]">Front - End Developer</p>
+					<p className="text-white text-[5vw] sm:text-[30px] md:text-[40px] lg:text-[50px]">
+						Front <span className='text-green-400'> - </span> End Developer
+					</p>
 				</div>
 
 				<ButtomP title="slite" url="#about" flecha="⭣" />

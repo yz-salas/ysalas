@@ -49,8 +49,8 @@ const Content = () => {
 
 	return (
 		<main className="container flex">
-			<div id="sidebar" className="flex flex-col space-y-72">
-				<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-lilita ">
+			<div id="sidebar" className="flex flex-col">
+				<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-lilita">
 					{/* Contenedor izquierdo */}
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
 						<h1 className="text-[50px] sticky top-36 text-green-400 ">
@@ -96,12 +96,12 @@ const Content = () => {
 				<section id="service" className="w-full flex flex-row lg:flex-col min-h-screen font-lilita">
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row ">
-					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-						<h1 className="text-[50px] sticky top-36 text-green-400">
-							Service
-							<hr className="w-[100px]" />
-						</h1>
-					</div>
+						<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
+							<h1 className="text-[50px] sticky top-36 text-green-400">
+								Service
+								<hr className="w-[100px]" />
+							</h1>
+						</div>
 
 						{/* Contenedor derecho */}
 						<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
@@ -136,12 +136,12 @@ const Content = () => {
 				<section id="project" className="w-full flex min-h-screen font-lilita flex-col">
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row">
-					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-						<h1 className="text-[50px] sticky top-36 text-green-400">
-							Project
-							<hr className="w-[100px]" />
-						</h1>
-					</div>
+						<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
+							<h1 className="text-[50px] sticky top-36 text-green-400">
+								Project
+								<hr className="w-[100px]" />
+							</h1>
+						</div>
 
 						{/* Contenedor derecho */}
 						<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
@@ -155,20 +155,21 @@ const Content = () => {
 								Como desarrollador web frontend con experiencia, me especializo en la creación de interfaces modernas, rápidas y funcionales.
 							</div>
 
-							<hr className="w-[100px]" />
-
 							<div className="flex gap-28">
 								<ButtomP title="know more" url="#more" />
 							</div>
 
-							<div className="w-full flex py-[40px]">
-								<div className="flex items-center justify-center lg:justify-start lg:items-start w-full">
+							<div id="more" className="w-full flex py-[40px]">
+								<div className="flex items-center flex-col justify-center lg:justify-start lg:items-start w-full space-y-10">
+									<div className="text-lg md:text-[50px] text-green-400 mt-10">these are my projects</div>
+
+									<hr className="w-[100px]" />
 									<div className="flex flex-wrap justify-center items-center lg:justify-start lg:items-start gap-[3px]">
 										{projects.map((project) => (
 											<Link
 												to={project.url}
 												target="blanck"
-												className="p-5 hover:bg-white/10 hover:bg-zinc-900 text-white min-h-[250px] space-y-5 rounded-sm flex transition duration-300 flex-col border-white border-[1px]"
+												className="p-5 hover:bg-white/15 hover:bg-zinc-900 text-white min-h-[250px] space-y-5 rounded-sm flex transition duration-300 flex-col border-white border-[1px]"
 											>
 												<div className="flex flex-col space-y-5">
 													<div className="text-green-400 text-[30px] w-full h-[15%] flex items-center">{project.number}</div>
@@ -190,12 +191,12 @@ const Content = () => {
 				<section id="skills" className="w-full flex min-h-screen font-lilita flex-col">
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row">
-					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-						<h1 className="text-[50px] sticky top-36 text-green-400">
-							Skills
-							<hr className="w-[100px]" />
-						</h1>
-					</div>
+						<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
+							<h1 className="text-[50px] sticky top-36 text-green-400">
+								Skills
+								<hr className="w-[100px]" />
+							</h1>
+						</div>
 
 						{/* Contenedor derecho */}
 						<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
@@ -226,7 +227,7 @@ const Content = () => {
 					</div>
 				</section>
 
-				<section className="min-h-[70vh]">
+				<section className="min-h-[100vh] flex justify-center items-center">
 					<footer id="contact" className="bg-white/10 rounded-sm font-lilita">
 						<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
 							<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
