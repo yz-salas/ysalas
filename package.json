@@ -2,7 +2,7 @@
 	"name": "templete-v1",
 	"private": true,
 	"version": "0.0.0",
-	"homepage": "http:/yz-salas.github.io/ysalas",
+	"homepage": "http:/yz-salas.github.io/ysalas/",
 	"type": "module",
 	"scripts": {
 		"predeploy": "npm run build",
