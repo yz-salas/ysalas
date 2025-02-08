@@ -9,6 +9,7 @@ export default {
 			},
 			fontFamily: {
 				exo2: ['"Exo 2"', 'serif'],
+				lilita: ['"Lilita One"', 'serif'], // Agregando Lilita One
 			},
 			fontWeight: {
 				100: 100,
@@ -29,6 +30,11 @@ export default {
 				'.exo-2': {
 					fontFamily: '"Exo 2", serif',
 					fontOpticalSizing: 'auto',
+					fontStyle: 'normal',
+				},
+				'.lilita-one': {
+					fontFamily: '"Lilita One", serif', // Agregando clase para Lilita One
+					fontWeight: '400',
 					fontStyle: 'normal',
 				},
 				// Clases personalizadas para los pesos de la fuente

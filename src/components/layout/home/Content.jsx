@@ -50,7 +50,7 @@ const Content = () => {
 	return (
 		<main className="container flex">
 			<div id="sidebar" className="flex flex-col space-y-72">
-				<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-serif ">
+				<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-lilita ">
 					{/* Contenedor izquierdo */}
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
 						<h1 className="text-[50px] sticky top-36 text-green-400 ">
@@ -93,7 +93,7 @@ const Content = () => {
 					</div>
 				</section>
 
-				<section id="service" className="w-full flex flex-row lg:flex-col min-h-screen font-serif">
+				<section id="service" className="w-full flex flex-row lg:flex-col min-h-screen font-lilita">
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row ">
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
@@ -133,7 +133,7 @@ const Content = () => {
 					</div>
 				</section>
 
-				<section id="project" className="w-full flex min-h-screen font-serif flex-col">
+				<section id="project" className="w-full flex min-h-screen font-lilita flex-col">
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row">
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
@@ -187,7 +187,7 @@ const Content = () => {
 					</div>
 				</section>
 
-				<section id="skills" className="w-full flex min-h-screen font-serif flex-col">
+				<section id="skills" className="w-full flex min-h-screen font-lilita flex-col">
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row">
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
@@ -227,7 +227,7 @@ const Content = () => {
 				</section>
 
 				<section className="min-h-[70vh]">
-					<footer id="contact" className="bg-white/10 rounded-sm font-serif">
+					<footer id="contact" className="bg-white/10 rounded-sm font-lilita">
 						<div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
 							<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 								<div className="space-y-5">
