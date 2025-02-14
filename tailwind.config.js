@@ -5,7 +5,7 @@ export default {
 		extend: {
 			container: {
 				center: true, // Centra el contenedor automáticamente
-				padding: '2rem', // Espaciado interno para todos los lados
+				padding: '8rem', // Espaciado interno para todos los lados
 			},
 			fontFamily: {
 				exo2: ['"Exo 2"', 'serif'],

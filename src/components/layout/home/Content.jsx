@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../Navbar';
 import ButtomP from '../../ui-ux/buttoms/ButtomP';
 import '../../../App.css';
 import Cart1 from '../../ui-ux/carts/Cart1';
@@ -48,19 +47,19 @@ const Content = () => {
 	];
 
 	return (
-		<main className="container flex">
-			<div id="sidebar" className="flex flex-col">
+		<main className="lg:container px-5 flex">
+			<div id="sidebar">
 				<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-lilita">
 					{/* Contenedor izquierdo */}
 					<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-						<h1 className="text-[50px] sticky top-36 text-green-400 ">
+						<h1 className="text-[50px] lg:text-[70px] sticky top-36 text-green-400 ">
 							About Us
 							<hr className="w-[100px]" />
 						</h1>
 					</div>
 
 					{/* Contenedor derecho */}
-					<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
+					<div className="w-full lg:w-[60%] md:px-10 lg:py-28 flex flex-col gap-10 text-white">
 						<div>
 							<p className="text-green-400 text-[20px]">1 / 5</p>
 						</div>
@@ -97,14 +96,14 @@ const Content = () => {
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row ">
 						<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-							<h1 className="text-[50px] sticky top-36 text-green-400">
+							<h1 className="text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 								Service
 								<hr className="w-[100px]" />
 							</h1>
 						</div>
 
 						{/* Contenedor derecho */}
-						<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
+						<div className="w-full lg:w-[60%] md:px-10 lg:py-28 flex flex-col gap-10 text-white">
 							<div>
 								<p className="text-green-400 text-[20px]">2 / 5</p>
 							</div>
@@ -137,14 +136,14 @@ const Content = () => {
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row">
 						<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-							<h1 className="text-[50px] sticky top-36 text-green-400">
+							<h1 className="text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 								Project
 								<hr className="w-[100px]" />
 							</h1>
 						</div>
 
 						{/* Contenedor derecho */}
-						<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
+						<div className="w-full lg:w-[60%] md:px-10 lg:py-28 flex flex-col gap-10 text-white">
 							<div>
 								<p className="text-green-400 text-[20px]">3 / 5</p>
 							</div>
@@ -192,14 +191,14 @@ const Content = () => {
 					{/* Contenedor izquierdo */}
 					<div className="flex flex-col lg:flex-row">
 						<div className="w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 ">
-							<h1 className="text-[50px] sticky top-36 text-green-400">
+							<h1 className="text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 								Skills
 								<hr className="w-[100px]" />
 							</h1>
 						</div>
 
 						{/* Contenedor derecho */}
-						<div className="w-full lg:w-[60%] md:px-10 py-28 flex flex-col gap-10 text-white">
+						<div className="w-full lg:w-[60%] md:px-10 lg:py-28 flex flex-col gap-10 text-white">
 							<div>
 								<p className="text-green-400 text-[20px]">4 / 5</p>
 							</div>
