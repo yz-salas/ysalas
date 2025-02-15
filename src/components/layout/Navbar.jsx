@@ -17,13 +17,30 @@ const Navbar = () => {
 			{/* Hamburger Button */}
 			<button
 				onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-				className="fixed top-4 left-4 z-50 flex ml-[12px] md:ml-[35px] lg:ml-[152px] mt-[40px] flex-col items-start space-y-2 group"
+				className="fixed min-w-[100px] top-4 left-4 z-50 flex ml-[12px] md:ml-[35px] lg:ml-[152px] mt-[40px] items-center space-y-2 group gap-2 transition-all duration-300 ease-in-out hover:scale-110"
 			>
-				{/* Top Line */}
-				<span className="w-[60px] h-[10px] rounded-sm bg-green-400 transition-all group-hover:w-[80px]"></span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="32"
+					height="32"
+					viewBox="0 0 24 24"
+					fill="none"
+					className="transition-all duration-300 ease-in-out group-hover:rotate-[20deg]"
+				>
+					<path
+						d="M2 15.29V5.71c0-1.33.77-1.65 1.71-.71L6.3 7.59c.39.39 1.03.39 1.41 0L11.29 4a.996.996 0 0 1 1.41 0l3.59 3.59c.39.39 1.03.39 1.41 0L20.29 5c.94-.94 1.71-.62 1.71.71v9.59c0 3-2 5-5 5H7c-2.76-.01-5-2.25-5-5.01Z"
+						stroke="#37d67a"
+						strokeWidth="1.5"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					></path>
+				</svg>
 
-				{/* Bottom Line */}
-				<span className="w-[30px] h-[10px] rounded-sm bg-green-400 transition-all group-hover:w-[40px]"></span>
+				<hr className="h-[50px] w-[1px] bg-white transition-all duration-300 ease-in-out" />
+
+				<div className="text-white/55 text-[23px] font-lilita transition-all duration-300 ease-in-out group-hover:tracking-[6px] group-hover:text-white">
+					Menu
+				</div>
 			</button>
 
 			{/* Sidebar */}
@@ -36,26 +53,17 @@ const Navbar = () => {
 					{/* Sidebar Content */}
 					<div className="w-full lg:w-[100%]">
 						<nav className="flex flex-col space-y-4 h-full w-full justify-center gap-5 font-lilita">
-							<div className="w-full h-[50px] flex items-center justify-between">
-								<Link
-									to="*"
-									className=" text-green-400 text-[35px] md:text-[60px] lg:text-[60px]"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-								>
-									YZS
-								</Link>
-
+							<div className="w-full h-[10px] flex items-center justify-end">
 								<button onClick={() => setIsSidebarOpen(false)} className="flex flex-col items-center justify-center space-y-1 group gap-5">
 									{/* Línea superior */}
 									<span className="w-[60px] h-[10px] rounded-sm bg-green-400 transition-all group-hover:w-[80px]"></span>
 								</button>
 							</div>
-							<hr className="w-full h-[1px] border-0 bg-white" />
-							<div className="flex flex-col gap-3">
+							<div className="flex flex-col">
 								<a
 									href="#home"
 									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/10 hover:text-green-400 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[60px] w-full lg:w-[70%] transition-colors duration-300 flex items-center"
+									className="text-white/55 text-[35px] hover:text-green-400 font-bolddec font-thin md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
 								>
 									Home
 								</a>
@@ -63,7 +71,7 @@ const Navbar = () => {
 								<a
 									href="#about"
 									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/10 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[60px] w-full lg:w-[70%] hover:text-green-400 transition-colors duration-300"
+									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
 								>
 									About
 								</a>
@@ -71,7 +79,7 @@ const Navbar = () => {
 								<a
 									href="#service"
 									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/10 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[60px] w-full lg:w-[70%] hover:text-green-400 transition-colors duration-300"
+									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
 								>
 									Service
 								</a>
@@ -79,18 +87,47 @@ const Navbar = () => {
 								<a
 									href="#project"
 									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/10 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[60px] w-full lg:w-[70%] hover:text-green-400 transition-colors duration-300"
+									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
 								>
-									Proyect
+									Project
 								</a>
 
 								<a
 									href="#skills"
 									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/10 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[60px] w-full lg:w-[70%] hover:text-green-400 transition-colors duration-300"
+									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
 								>
 									Skills
 								</a>
+								<a
+									href="#contact"
+									onClick={handleLinkClick} // Use the handleLinkClick with delay
+									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
+								>
+									Contact
+								</a>
+							</div>
+							<hr className="w-full h-[1px] border-0 bg-white" />
+							<div className="w-full min-h-[50px] flex items-center justify-between">
+								<ul className="flex space-x-5 lg:items-center text-white/55">
+									<li>
+										<a href="#" className="text-white text-[20px] hover:text-green-400">
+											Instagram
+										</a>
+									</li>
+
+									<li>
+										<a href="#" className="text-white text-[20px] hover:text-green-400">
+											WhatsApp
+										</a>
+									</li>
+
+									<li>
+										<a href="#" className="text-white text-[20px] hover:text-green-400">
+											GitHub
+										</a>
+									</li>
+								</ul>
 							</div>
 						</nav>
 					</div>
