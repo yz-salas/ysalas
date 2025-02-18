@@ -76,7 +76,7 @@ const About = () => {
 					<p>js and Tailwind CSS, I'm ready to take on any development challenge.</p>
 				</div>
 
-				<div className="flex gap-5 text-zinc-700">
+				<div className="flex flex-wrap gap-5 text-zinc-700">
 					<div className="w-full md:w-[40%] flex flex-col">
 						<ButtomP title="Contact Me" flecha="⭢" url="#contact" />
 					</div>
