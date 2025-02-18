@@ -10,7 +10,7 @@ import Footer from './Footer';
 const Content = () => {
 	return (
 		<main className="lg:container px-5 flex">
-			<div id="sidebar">
+			<div className='w-full'>
 				<About />
 				<Service />
 				<Project />

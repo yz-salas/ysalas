@@ -52,16 +52,16 @@ const Project = () => {
 	useEffect(() => {
 		const observerOptions = {
 			root: null,
-			threshold: 0.3, // Se activa cuando el 30% del elemento es visible
+			threshold: 0.3, // Se activa cuando el 70% del elemento es visible
 		};
 
-		const observerLeft = new IntersectionObserver(([entry]) => {
-			setIsVisibleLeft(entry.isIntersecting);
-		}, observerOptions);
+		const observerCallback = (entries, observer, setState) => {
+			entries.forEach((entry) => setState(entry.isIntersecting));
+		};
 
-		const observerRight = new IntersectionObserver(([entry]) => {
-			setIsVisibleRight(entry.isIntersecting);
-		}, observerOptions);
+		const observerLeft = new IntersectionObserver((entries) => observerCallback(entries, observerLeft, setIsVisibleLeft), observerOptions);
+
+		const observerRight = new IntersectionObserver((entries) => observerCallback(entries, observerRight, setIsVisibleRight), observerOptions);
 
 		if (leftRef.current) observerLeft.observe(leftRef.current);
 		if (rightRef.current) observerRight.observe(rightRef.current);
@@ -74,7 +74,6 @@ const Project = () => {
 
 	return (
 		<section id="project" className="w-full flex min-h-screen font-serif flex-col">
-			{/* Contenedor principal */}
 			<div className="flex flex-col lg:flex-row">
 				{/* Contenedor izquierdo */}
 				<div
@@ -83,7 +82,7 @@ const Project = () => {
 						isVisibleLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
 					}`}
 				>
-					<h1  className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
+					<h1 className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 						Project
 						<hr className="w-[100px]" />
 					</h1>
@@ -107,7 +106,7 @@ const Project = () => {
 					</div>
 
 					<div className="flex gap-28">
-						<ButtomP title="know more" url="#more" />
+						<ButtomP title="know more" url="#skills" />
 					</div>
 
 					{/* Sección de Proyectos */}
@@ -123,7 +122,7 @@ const Project = () => {
 										key={project.id}
 										to={project.url}
 										target="blanck"
-										className="p-5 hover:bg-white/15 hover:bg-zinc-900 text-white min-h-[250px] space-y-5 flex transition duration-300 flex-col border-white border-[1px]"
+										className="p-5 hover:bg-zinc-800 text-white min-h-[250px] space-y-5 flex transition duration-300 flex-col border-white border-[1px]"
 									>
 										<div className="flex flex-col space-y-5">
 											<div className="text-green-400 text-[30px] w-full h-[15%] flex items-center">{project.number}</div>

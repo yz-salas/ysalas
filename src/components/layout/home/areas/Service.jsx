@@ -11,16 +11,16 @@ const Service = () => {
 	useEffect(() => {
 		const observerOptions = {
 			root: null,
-			threshold: 0.3, // Se activa cuando el 30% del elemento es visible
+			threshold: 0.6, // Se activa cuando el 70% del elemento es visible
 		};
 
-		const observerLeft = new IntersectionObserver(([entry]) => {
-			setIsVisibleLeft(entry.isIntersecting);
-		}, observerOptions);
+		const observerCallback = (entries, observer, setState) => {
+			entries.forEach((entry) => setState(entry.isIntersecting));
+		};
 
-		const observerRight = new IntersectionObserver(([entry]) => {
-			setIsVisibleRight(entry.isIntersecting);
-		}, observerOptions);
+		const observerLeft = new IntersectionObserver((entries) => observerCallback(entries, observerLeft, setIsVisibleLeft), observerOptions);
+
+		const observerRight = new IntersectionObserver((entries) => observerCallback(entries, observerRight, setIsVisibleRight), observerOptions);
 
 		if (leftRef.current) observerLeft.observe(leftRef.current);
 		if (rightRef.current) observerRight.observe(rightRef.current);
@@ -42,7 +42,7 @@ const Service = () => {
 						isVisibleLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
 					}`}
 				>
-					<h1  className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
+					<h1 className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 						Service
 						<hr className="w-[100px]" />
 					</h1>
@@ -68,7 +68,7 @@ const Service = () => {
 					<hr className="w-[100px]" />
 
 					<div className="flex gap-28">
-						<ButtomP title="I want to hire you!" url="#more" />
+						<ButtomP title="I want to hire you!" url="#project" />
 					</div>
 
 					<div className="w-full py-28 flex flex-col space-y-10">

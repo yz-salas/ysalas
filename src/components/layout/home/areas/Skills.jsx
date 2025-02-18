@@ -11,16 +11,16 @@ const Skills = () => {
 	useEffect(() => {
 		const observerOptions = {
 			root: null,
-			threshold: 0.3, // Se activa cuando el 30% del elemento es visible
+			threshold: 0.5, // Se activa cuando el 70% del elemento es visible
 		};
 
-		const observerLeft = new IntersectionObserver(([entry]) => {
-			setIsVisibleLeft(entry.isIntersecting);
-		}, observerOptions);
+		const observerCallback = (entries, observer, setState) => {
+			entries.forEach((entry) => setState(entry.isIntersecting));
+		};
 
-		const observerRight = new IntersectionObserver(([entry]) => {
-			setIsVisibleRight(entry.isIntersecting);
-		}, observerOptions);
+		const observerLeft = new IntersectionObserver((entries) => observerCallback(entries, observerLeft, setIsVisibleLeft), observerOptions);
+
+		const observerRight = new IntersectionObserver((entries) => observerCallback(entries, observerRight, setIsVisibleRight), observerOptions);
 
 		if (leftRef.current) observerLeft.observe(leftRef.current);
 		if (rightRef.current) observerRight.observe(rightRef.current);
@@ -37,7 +37,7 @@ const Skills = () => {
 				{/* Contenedor izquierdo */}
 				<div
 					ref={leftRef}
-					className={`w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 transition-all duration-700 ease-in-out ${
+					className={`w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 transition-all duration-1000 ease-in-out ${
 						isVisibleLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
 					}`}
 				>

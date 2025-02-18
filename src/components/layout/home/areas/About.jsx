@@ -10,16 +10,16 @@ const About = () => {
 	useEffect(() => {
 		const observerOptions = {
 			root: null,
-			threshold: 0.3, // Se activa cuando el 30% del elemento es visible
+			threshold: 0.6, // Se activa cuando el 70% del elemento es visible
 		};
 
-		const observerLeft = new IntersectionObserver(([entry]) => {
-			setIsVisibleLeft(entry.isIntersecting);
-		}, observerOptions);
+		const observerCallback = (entries, observer, setState) => {
+			entries.forEach((entry) => setState(entry.isIntersecting));
+		};
 
-		const observerRight = new IntersectionObserver(([entry]) => {
-			setIsVisibleRight(entry.isIntersecting);
-		}, observerOptions);
+		const observerLeft = new IntersectionObserver((entries) => observerCallback(entries, observerLeft, setIsVisibleLeft), observerOptions);
+
+		const observerRight = new IntersectionObserver((entries) => observerCallback(entries, observerRight, setIsVisibleRight), observerOptions);
 
 		if (leftRef.current) observerLeft.observe(leftRef.current);
 		if (rightRef.current) observerRight.observe(rightRef.current);
@@ -40,7 +40,7 @@ const About = () => {
 				}`}
 			>
 				<h1 className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
-					About Us
+					About Me
 					<hr className="w-[100px]" />
 				</h1>
 			</div>
@@ -76,9 +76,12 @@ const About = () => {
 					<p>js and Tailwind CSS, I'm ready to take on any development challenge.</p>
 				</div>
 
-				<div className="flex gap-28 text-zinc-700">
-					<div className="w-full md:w-[40%] flex flex-col gap-20">
+				<div className="flex gap-5 text-zinc-700">
+					<div className="w-full md:w-[40%] flex flex-col">
 						<ButtomP title="Contact Me" flecha="⭢" url="#contact" />
+					</div>
+					<div className="w-full md:w-[40%] flex flex-wrap flex-col gap-5">
+						<ButtomP title="What do you offer?" flecha="⭢" url="#service" />
 					</div>
 				</div>
 			</div>
