@@ -32,7 +32,7 @@ const Service = () => {
 	}, []);
 
 	return (
-		<section id="service" className="w-full flex flex-row lg:flex-col min-h-screen font-lilita">
+		<section id="service" className="w-full flex flex-row lg:flex-col min-h-screen font-serif">
 			{/* Contenedor principal */}
 			<div className="flex flex-col lg:flex-row">
 				{/* Contenedor izquierdo */}
@@ -42,7 +42,7 @@ const Service = () => {
 						isVisibleLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
 					}`}
 				>
-					<h1 className="text-[50px] lg:text-[70px] sticky top-36 text-green-400">
+					<h1  className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 						Service
 						<hr className="w-[100px]" />
 					</h1>

@@ -38,9 +38,7 @@ const Navbar = () => {
 
 				<hr className="h-[50px] w-[1px] bg-white transition-all duration-300 ease-in-out" />
 
-				<div className="text-white/55 text-[23px] font-lilita transition-all duration-300 ease-in-out group-hover:tracking-[6px] group-hover:text-white">
-					Menu
-				</div>
+				<div className="text-[23px] font-serif transition-all duration-300 ease-in-out group-hover:tracking-[6px] text-white">Menu</div>
 			</button>
 
 			{/* Sidebar */}
@@ -52,60 +50,65 @@ const Navbar = () => {
 				<div className="px-10 py-[100px] lg:px-[8rem] flex flex-col w-full h-full gap-10 lg:gap-0 ">
 					{/* Sidebar Content */}
 					<div className="w-full lg:w-[100%]">
-						<nav className="flex flex-col space-y-4 h-full w-full justify-center gap-5 font-lilita">
+						<nav className="flex flex-col space-y-4 h-full w-full justify-center gap-5 font-serif">
 							<div className="w-full h-[10px] flex items-center justify-end">
 								<button onClick={() => setIsSidebarOpen(false)} className="flex flex-col items-center justify-center space-y-1 group gap-5">
 									{/* Línea superior */}
 									<span className="w-[60px] h-[10px] rounded-sm bg-green-400 transition-all group-hover:w-[80px]"></span>
 								</button>
 							</div>
-							<div className="flex flex-col">
-								<a
-									href="#home"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/55 text-[35px] hover:text-green-400 font-bolddec font-thin md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
-								>
-									Home
-								</a>
+							<div className="flex min-h-[50vh]">
+								<div className="flex flex-col">
+									<a
+										href="#home"
+										onClick={handleLinkClick} // Use the handleLinkClick with delay
+										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
+									>
+										Home
+									</a>
 
-								<a
-									href="#about"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
-								>
-									About
-								</a>
+									<a
+										href="#about"
+										onClick={handleLinkClick} // Use the handleLinkClick with delay
+										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
+									>
+										About
+									</a>
 
-								<a
-									href="#service"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
-								>
-									Service
-								</a>
+									<a
+										href="#service"
+										onClick={handleLinkClick} // Use the handleLinkClick with delay
+										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
+									>
+										Service
+									</a>
 
-								<a
-									href="#project"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
-								>
-									Project
-								</a>
+									<a
+										href="#project"
+										onClick={handleLinkClick} // Use the handleLinkClick with delay
+										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
+									>
+										Project
+									</a>
 
-								<a
-									href="#skills"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
-								>
-									Skills
-								</a>
-								<a
-									href="#contact"
-									onClick={handleLinkClick} // Use the handleLinkClick with delay
-									className="text-white/55 font-bolddec font-thin text-[35px] md:text-[60px] lg:text-[50px] w-full lg:w-[20%] hover:text-green-400 transition-colors duration-300"
-								>
-									Contact
-								</a>
+									<a
+										href="#skills"
+										onClick={handleLinkClick} // Use the handleLinkClick with delay
+										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
+									>
+										Skills
+									</a>
+									<a
+										href="#contact"
+										onClick={handleLinkClick} // Use the handleLinkClick with delay
+										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:w-[20%] transition-colors duration-300 flex items-center"
+									>
+										Contact
+									</a>
+								</div>
+								<div className="lg:w-[80%] h-full flex justify-center items-center">
+									<h1 className={`text-[0px] lg:text-[300px] ${isSidebarOpen ? 'block' : 'hidden'}`}>MENU</h1>
+								</div>
 							</div>
 							<hr className="w-full h-[1px] border-0 bg-white" />
 							<div className="w-full min-h-[50px] flex items-center justify-between">

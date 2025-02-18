@@ -4,12 +4,13 @@ export default {
 	theme: {
 		extend: {
 			container: {
-				center: true, // Centra el contenedor automáticamente
-				padding: '8rem', // Espaciado interno para todos los lados
+				center: true,
+				padding: '8rem',
 			},
 			fontFamily: {
 				exo2: ['"Exo 2"', 'serif'],
-				lilita: ['"Lilita One"', 'serif'], // Agregando Lilita One
+				lilita: ['"Lilita One"', 'serif'],
+				bebas: ['"Bebas Neue"', 'sans-serif'],
 			},
 			fontWeight: {
 				100: 100,
@@ -25,45 +26,23 @@ export default {
 		},
 	},
 	plugins: [
-		function ({ addComponents }) {
-			addComponents({
-				'.exo-2': {
-					fontFamily: '"Exo 2", serif',
-					fontOpticalSizing: 'auto',
-					fontStyle: 'normal',
+		function ({ addUtilities }) {
+			addUtilities({
+				'.outline-text-white-2': {
+					'-webkit-text-stroke': '2px white', // Contorno blanco
+					color: 'transparent', // Hace que el texto sea hueco
 				},
-				'.lilita-one': {
-					fontFamily: '"Lilita One", serif', // Agregando clase para Lilita One
-					fontWeight: '400',
-					fontStyle: 'normal',
+				'.outline-text-white-1': {
+					'-webkit-text-stroke': '1px white', // Contorno blanco
+					color: 'transparent', // Hace que el texto sea hueco
 				},
-				// Clases personalizadas para los pesos de la fuente
-				'.exo-2-100': {
-					fontWeight: '100',
+				'.outline-text-black-2': {
+					'-webkit-text-stroke': '2px black', // Contorno blanco
+					color: 'transparent', // Hace que el texto sea hueco
 				},
-				'.exo-2-200': {
-					fontWeight: '200',
-				},
-				'.exo-2-300': {
-					fontWeight: '300',
-				},
-				'.exo-2-400': {
-					fontWeight: '400',
-				},
-				'.exo-2-500': {
-					fontWeight: '500',
-				},
-				'.exo-2-600': {
-					fontWeight: '600',
-				},
-				'.exo-2-700': {
-					fontWeight: '700',
-				},
-				'.exo-2-800': {
-					fontWeight: '800',
-				},
-				'.exo-2-900': {
-					fontWeight: '900',
+				'.outline-text-black-1': {
+					'-webkit-text-stroke': '1px black', // Contorno blanco
+					color: 'transparent', // Hace que el texto sea hueco
 				},
 			});
 		},

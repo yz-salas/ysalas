@@ -31,7 +31,7 @@ const About = () => {
 	}, []);
 
 	return (
-		<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-lilita">
+		<section id="about" className="w-full flex flex-col lg:flex-row min-h-screen font-serif">
 			{/* Contenedor izquierdo */}
 			<div
 				ref={leftRef}
@@ -39,7 +39,7 @@ const About = () => {
 					isVisibleLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
 				}`}
 			>
-				<h1 className="text-[50px] lg:text-[70px] sticky top-36 text-green-400">
+				<h1 className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
 					About Us
 					<hr className="w-[100px]" />
 				</h1>
@@ -56,7 +56,7 @@ const About = () => {
 					<p className="text-green-400 text-[20px]">1 / 5</p>
 				</div>
 				<hr className="w-[100px]" />
-				<div className="text-lg space-y-2">
+				<div className="text-[15px] space-y-2">
 					<p>My name is Zadiel Salas, I am 21 years old and I am a self-taught front-end web developer.</p>
 					<p>
 						I have always loved the world of digital, and since I was little, I have been very creative, applying myself to drawing, photography, and
@@ -70,7 +70,7 @@ const About = () => {
 
 				<hr className="w-[100px]" />
 
-				<div className="text-lg space-y-2">
+				<div className="text-[15px] space-y-2">
 					<p>I have solid knowledge in various web development technologies, which allow us to create efficient and modern solutions.</p>
 					<p>From using design languages like HTML and CSS to implementing advanced frameworks like React.</p>
 					<p>js and Tailwind CSS, I'm ready to take on any development challenge.</p>

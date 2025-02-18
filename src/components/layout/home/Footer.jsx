@@ -4,7 +4,7 @@ import ButtomP from '../../ui-ux/buttoms/ButtomP';
 const Footer = () => {
 	return (
 		<section className="min-h-[90vh] flex justify-center items-center px-4">
-			<footer id="contact" className="bg-white/10 rounded-lg font-lilita h-[70vh] p-8">
+			<footer id="contact" className="bg-white/10 rounded-lg font-lilita min-h-[70vh] p-8">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 					{/* Information */}
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
