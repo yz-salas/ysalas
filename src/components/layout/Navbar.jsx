@@ -1,148 +1,109 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { LeftToRightAnimation } from '../motion/AppMotion';
+import React, { useState, useEffect } from 'react';
+import ClickSpark from '../motion/ClickSpark';
+
 const Navbar = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const [activeSection, setActiveSection] = useState('');
 
-	// Function to handle the delay when closing the sidebar
+	useEffect(() => {
+		const sections = document.querySelectorAll('section, footer'); // Asegúrate de incluir el footer
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setActiveSection(entry.target.id);
+					}
+				});
+			},
+			{ threshold: 0.5 } // Detecta cuando la sección está al 50% en pantalla
+		);
+
+		sections.forEach((section) => observer.observe(section));
+
+		return () => sections.forEach((section) => observer.unobserve(section));
+	}, []);
+
 	const handleLinkClick = () => {
-		// Add a delay before closing the sidebar
 		setTimeout(() => {
 			setIsSidebarOpen(false);
-		}, 300); // Delay of 300ms before closing the sidebar
+		}, 300);
 	};
 
 	return (
-		<div className="relative">
-			{/* Hamburger Button */}
-			<button
-				onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-				className="fixed min-w-[100px] top-4 left-4 z-50 flex ml-[12px] md:ml-[35px] lg:ml-[152px] mt-[40px] items-center space-y-2 group gap-2 transition-all duration-300 ease-in-out hover:scale-110"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="32"
-					height="32"
-					viewBox="0 0 24 24"
-					fill="none"
-					className="transition-all duration-300 ease-in-out group-hover:rotate-[20deg]"
+		<ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+			<div className="relative">
+				{/* Pequeños indicadores de navegación */}
+				<div className="fixed right-[40px] flex flex-col space-y-4 top-[50%] transform -translate-y-1/2 z-10">
+					{['home', 'about', 'service', 'projects', 'contact'].map((id) => (
+						<a key={id} href={`#${id}`}>
+							<div
+								className={`w-[3px] h-[50px] transition-all duration-300 ${activeSection === id ? 'bg-purple-600 scale-125' : 'bg-white opacity-50'}`}
+							></div>
+						</a>
+					))}
+					{/* Indicador para el footer */}
+					{activeSection === 'footer' && ( // Solo renderiza el indicador si el footer es la sección activa
+						<a href="#footer">
+							<div
+								className={`w-[3px] h-[50px] transition-all duration-300 ${
+									activeSection === 'footer' ? 'bg-purple-600 scale-125' : 'bg-white opacity-50'
+								}`}
+							></div>
+						</a>
+					)}
+				</div>
+
+				{/* Hamburger Button */}
+				<button
+					onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+					className="fixed min-w-[60px] flex-col top-2 left-2 z-50 flex ml-[8px] md:ml-[20px] lg:ml-[148px] mt-[70px] space-y-3 group gap-1 transition-all duration-300 ease-in-out"
 				>
-					<path
-						d="M2 15.29V5.71c0-1.33.77-1.65 1.71-.71L6.3 7.59c.39.39 1.03.39 1.41 0L11.29 4a.996.996 0 0 1 1.41 0l3.59 3.59c.39.39 1.03.39 1.41 0L20.29 5c.94-.94 1.71-.62 1.71.71v9.59c0 3-2 5-5 5H7c-2.76-.01-5-2.25-5-5.01Z"
-						stroke="#37d67a"
-						strokeWidth="1.5"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					></path>
-				</svg>
+					<div className="w-[50px] h-[3px] bg-purple-600 transition-all duration-300 group-hover:w-[70px]" />
+					<div className="w-[30px] h-[2px] bg-teal-600 transition-all duration-300 group-hover:w-[50px]" />
+				</button>
 
-				<hr className="h-[50px] w-[1px] bg-white transition-all duration-300 ease-in-out" />
-
-				<div className="text-[23px] font-serif transition-all duration-300 ease-in-out group-hover:tracking-[6px] text-white">Menu</div>
-			</button>
-
-			{/* Sidebar */}
-			<div
-				className={`fixed top-0 left-0 h-full w-full bg-zinc-950 shadow-md transition-transform transform ${
-					isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-				} z-50 transition-all duration-500 delay-100`} // Add delay to the transition
-			>
-				<div className="px-10 py-[100px] lg:px-[8rem] flex flex-col w-full h-full gap-10 lg:gap-0 ">
-					{/* Sidebar Content */}
-					<div className="w-full lg:w-[100%]">
-						<nav className="flex flex-col space-y-4 h-full w-full justify-center gap-5 font-serif">
-							<div className="w-full h-[10px] flex items-center justify-end">
-								<button onClick={() => setIsSidebarOpen(false)} className="flex flex-col items-center justify-center space-y-1 group gap-5">
-									{/* Línea superior */}
-									<span className="w-[60px] h-[10px] rounded-sm border-2 border-white transition-all group-hover:w-[80px]"></span>
-								</button>
-							</div>
-							<div className="flex min-h-[50vh]">
-								<div className="flex flex-col lg:w-[]">
-									<a
-										href="#home"
-										onClick={handleLinkClick} // Use the handleLinkClick with delay
-										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:min-w-[20%] transition-colors duration-300 flex items-center"
-									>
-										Home
-									</a>
-
-									<a
-										href="#about"
-										onClick={handleLinkClick} // Use the handleLinkClick with delay
-										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:min-w-[20%] transition-colors duration-300 flex items-center"
-									>
-										About Me
-									</a>
-
-									<a
-										href="#service"
-										onClick={handleLinkClick} // Use the handleLinkClick with delay
-										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:min-w-[20%] transition-colors duration-300 flex items-center"
-									>
-										My Services
-									</a>
-
-									<a
-										href="#project"
-										onClick={handleLinkClick} // Use the handleLinkClick with delay
-										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:min-w-[20%] transition-colors duration-300 flex items-center"
-									>
-										My Projects
-									</a>
-
-									<a
-										href="#skills"
-										onClick={handleLinkClick} // Use the handleLinkClick with delay
-										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:min-w-[20%] transition-colors duration-300 flex items-center"
-									>
-										My Skills
-									</a>
-									<a
-										href="#contact"
-										onClick={handleLinkClick} // Use the handleLinkClick with delay
-										className=" outline-text-white-1 text-[35px] hover:text-white font-bolddec font-serif md:text-[60px] lg:text-[50px] w-full lg:min-w-[20%] transition-colors duration-300 flex items-center"
-									>
-										Contact Me
-									</a>
+				{/* Sidebar */}
+				<div
+					className={`fixed top-0 flex-col left-0 h-full w-full bg-zinc-950 transition-transform ${
+						isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+					} z-50 duration-500`}
+				>
+					<div className="px-10 py-[100px] lg:px-[8rem] flex flex-col w-full h-full gap-10 lg:gap-0">
+						{/* Sidebar Content */}
+						<div className="w-full lg:w-[100%]">
+							<nav className="flex flex-col justify-center w-full h-full gap-5 space-y-4 font-saira">
+								<div className="w-full h-[10px] flex items-center justify-end">
+									<button onClick={() => setIsSidebarOpen(false)} className="flex flex-col items-end space-y-2 group">
+										<div className="w-[50px] h-[4px] bg-white transition-all duration-300 group-hover:w-[70px]" />
+									</button>
 								</div>
-								<div className="lg:w-[70%] h-full flex justify-center items-center">
-									<h1 className={`text-[0px] lg:text-[250px] ${isSidebarOpen ? 'block' : 'hidden'}`}>MENU</h1>
+								<div className="flex min-h-[50vh]">
+									<div className="flex flex-col">
+										{['home', 'about', 'service', 'projects', 'contact'].map((id, index) => (
+											<a
+												key={id}
+												href={`#${id}`}
+												onClick={handleLinkClick}
+												className="text-[35px] hover:text-purple-600 text-zinc-700 md:text-[60px] lg:text-[50px] w-full transition-colors duration-300 flex items-center"
+											>
+												{['Home', 'About Me', 'My Services', 'My Projects', 'Contact Me'][index]}
+											</a>
+										))}
+									</div>
+									<div className="lg:w-[70%] h-full flex justify-center items-center">
+										<h1 className={`text-[0px] lg:text-[250px] text-purple-600 font-100 ${isSidebarOpen ? 'block' : 'hidden'}`}>MENU</h1>
+									</div>
 								</div>
-							</div>
-							<hr className="w-full h-[1px] border-0 bg-white" />
-							<div className="w-full min-h-[50px] flex items-center justify-between">
-								<ul className="flex space-x-5 lg:items-center text-white/55">
-									<li>
-										<a href="#" className="text-white text-[20px] hover:text-green-400">
-											Instagram
-										</a>
-									</li>
-
-									<li>
-										<a href="#" className="text-white text-[20px] hover:text-green-400">
-											WhatsApp
-										</a>
-									</li>
-
-									<li>
-										<a href="#" className="text-white text-[20px] hover:text-green-400">
-											GitHub
-										</a>
-									</li>
-								</ul>
-							</div>
-						</nav>
-					</div>
-					<div className="w-[30%]">
-						<div className=""></div>
+								<hr className="w-full h-[1px] border-0 bg-white" />
+							</nav>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			{/* Overlay */}
-			{isSidebarOpen && <div onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>}
-		</div>
+				{/* Overlay */}
+				{isSidebarOpen && <div onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 z-40 bg-black bg-opacity-50"></div>}
+			</div>
+		</ClickSpark>
 	);
 };
 

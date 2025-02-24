@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ButtomP from '../../../ui-ux/buttoms/ButtomP';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPhp, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { SiTailwindcss } from 'react-icons/si';
 
 const projects = [
 	{
@@ -8,139 +9,114 @@ const projects = [
 		title: 'AOS Corporation',
 		subtitle:
 			'My First Website Developed In Php, Tailwind.css, And Mysql, This Being My First Website I Was Able To Finish It After One Or Two Months',
-		number: '01',
 		url: 'https://aoscorporation.com/src/main.php',
+		technologies: [<FaPhp className="text-indigo-500" />, <SiTailwindcss className="text-blue-400" />],
 	},
 	{
 		id: 2,
 		title: 'DelfinesPark',
 		subtitle:
 			'This is my second website developed in Php, Css, Tailwind, Mysql, at the time I created this app I already had some more experience and it is reflected in the website, its design and functionality speak for themselves.',
-		number: '02',
 		url: 'https://delfinespark.com/src/main.php',
-	},
-	{
-		id: 4,
-		title: 'Your Images',
-		subtitle:
-			'This small website shows my ability to consume apis and display its data on the screen, it is developed in html, css, javasctipt, tailwind.css, and react.js shows images of an API when you click a button, they are added 1 by 1 and all images are deleted when you touch the secondary button',
-		number: '03',
-		url: 'https://github.com/yz-salas/App_image',
-	},
-	{
-		id: 5,
-		title: 'Weather App',
-		subtitle: 'Using a weather API, this website gives the exact weather in real time of cities in different countries.',
-		number: '04',
-		url: 'https://github.com/yz-salas/App_De_Clima',
-	},
-	{
-		id: 6,
-		title: 'Rick And Morty',
-		subtitle: 'By consuming an API, this website shows images of characters from the famous television show called Rick and Morty.',
-		number: '05',
-		url: 'https://github.com/yz-salas/app_personajes',
+		technologies: [<FaPhp className="text-indigo-500" />, <FaCss3Alt className="text-blue-500" />, <SiTailwindcss className="text-blue-400" />],
 	},
 ];
 
-const Project = () => {
-	const leftRef = useRef(null);
-	const rightRef = useRef(null);
-	const [isVisibleLeft, setIsVisibleLeft] = useState(false);
-	const [isVisibleRight, setIsVisibleRight] = useState(false);
+const Projectintro = () => {
+	const sectionRef = useRef(null);
+	const textRef = useRef(null);
+	const projectsRef = useRef(null);
+	const textAreaRef = useRef(null); // Nueva referencia para el área de texto
+	const [isVisibleText, setIsVisibleText] = useState(false);
+	const [isVisibleProjects, setIsVisibleProjects] = useState(false);
+	const [isVisibleTextArea, setIsVisibleTextArea] = useState(false); // Estado para el área de texto
 
 	useEffect(() => {
-		const observerOptions = {
-			root: null,
-			threshold: 0.3, // Se activa cuando el 70% del elemento es visible
-		};
+		const observerOptions = { root: null, threshold: 0.3 };
 
-		const observerCallback = (entries, observer, setState) => {
+		const observerCallback = (entries, setState) => {
 			entries.forEach((entry) => setState(entry.isIntersecting));
 		};
 
-		const observerLeft = new IntersectionObserver((entries) => observerCallback(entries, observerLeft, setIsVisibleLeft), observerOptions);
+		const observerText = new IntersectionObserver((entries) => observerCallback(entries, setIsVisibleText), observerOptions);
+		const observerProjects = new IntersectionObserver((entries) => observerCallback(entries, setIsVisibleProjects), observerOptions);
+		const observerTextArea = new IntersectionObserver((entries) => observerCallback(entries, setIsVisibleTextArea), observerOptions);
 
-		const observerRight = new IntersectionObserver((entries) => observerCallback(entries, observerRight, setIsVisibleRight), observerOptions);
-
-		if (leftRef.current) observerLeft.observe(leftRef.current);
-		if (rightRef.current) observerRight.observe(rightRef.current);
+		if (textRef.current) observerText.observe(textRef.current);
+		if (projectsRef.current) observerProjects.observe(projectsRef.current);
+		if (textAreaRef.current) observerTextArea.observe(textAreaRef.current); // Observar el área de texto
 
 		return () => {
-			if (leftRef.current) observerLeft.unobserve(leftRef.current);
-			if (rightRef.current) observerRight.unobserve(rightRef.current);
+			if (textRef.current) observerText.unobserve(textRef.current);
+			if (projectsRef.current) observerProjects.unobserve(projectsRef.current);
+			if (textAreaRef.current) observerTextArea.unobserve(textAreaRef.current); // Dejar de observar
 		};
 	}, []);
 
 	return (
-		<section id="project" className="w-full flex min-h-screen font-serif flex-col">
-			<div className="flex flex-col lg:flex-row">
-				{/* Contenedor izquierdo */}
-				<div
-					ref={leftRef}
-					className={`w-full lg:w-[40%] flex flex-col items-start py-16 md:pl-10 transition-all duration-700 ease-in-out ${
-						isVisibleLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+		<div className="relative w-full font-100 flex h-screen flex-col justify-center" ref={sectionRef}>
+			{/* about */}
+			<div className="absolute px-3 inset-0 flex z-0 transition-opacity duration-1000 opacity-20">
+				<h1
+					ref={textRef}
+					className={`text-[100px] md:text-[150px] lg:text-[250px] font-400 font-saira outline-text-white-2 mt-5 transition-all duration-1000 ${
+						isVisibleText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
 					}`}
 				>
-					<h1 className="outline-text-white-1 text-[50px] lg:text-[70px] sticky top-36 text-green-400">
-						Project
-						<hr className="w-[100px]" />
-					</h1>
-				</div>
-
-				{/* Contenedor derecho */}
-				<div
-					ref={rightRef}
-					className={`w-full lg:w-[60%] md:px-10 lg:py-28 flex flex-col gap-10 text-white transition-all duration-700 ease-in-out ${
-						isVisibleRight ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-					}`}
-				>
-					<div>
-						<p className="text-green-400 text-[20px]">3 / 5</p>
+					Projects
+				</h1>
+			</div>
+			{/* about */}
+			<div className="flex flex-grow justify-center">
+				<div className="w-full flex px-8 py-[80px] justify-between items-end font-saira transition-all duration-700 ease-in-out">
+					{/* Texto */}
+					<div
+						ref={textAreaRef} // Asignar la referencia al área de texto
+						className={`flex flex-col gap-2 font-400 text-[25px] text-white w-[50%] transition-all duration-1000 ${
+							isVisibleTextArea ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+						}`}
+					>
+						<p>My focus is on writing clean and optimized code, ensuring a smooth and engaging user experience.</p>
+						<p>With mastery of Key technologies and a minimalist style, always looking for the best combination of functionality and design.</p>
+						<p>And that is precisely why I master technologies that allow me to develop the qualities on your page that I previously mentioned.</p>
 					</div>
-
-					<hr className="w-[100px]" />
-
-					<div className="text-lg">
-						Como desarrollador web frontend con experiencia, me especializo en la creación de interfaces modernas, rápidas y funcionales.
-					</div>
-
-					<div className="flex gap-28">
-						<ButtomP title="know more" url="#skills" />
-					</div>
-
-					{/* Sección de Proyectos */}
-					<div id="more" className="w-full flex py-[40px]">
-						<div className="flex items-center flex-col justify-center lg:justify-start lg:items-start w-full space-y-10">
-							<div className="text-lg md:text-[50px] text-green-400 mt-10">these are my projects</div>
-
-							<hr className="w-[100px]" />
-
-							<div className="flex flex-wrap justify-center items-center lg:justify-start lg:items-start gap-[3px]">
-								{projects.map((project) => (
-									<Link
-										key={project.id}
-										to={project.url}
-										target="blanck"
-										className="p-5 hover:bg-zinc-800 text-white min-h-[250px] space-y-5 flex transition duration-300 flex-col border-white border-[1px]"
-									>
-										<div className="flex flex-col space-y-5">
-											<div className="text-green-400 text-[30px] w-full h-[15%] flex items-center">{project.number}</div>
-										</div>
-										<hr className="w-[100px]" />
-										<div className="w-full h-[80%] flex justify-center flex-col space-y-2">
-											<h1 className="text-[20px] text-green-400">{project.title}</h1>
-											<p className="text-[15px]">{project.subtitle}</p>
-										</div>
-									</Link>
-								))}
-							</div>
+					{/* Texto */}
+					<div className="relative w-full max-w-[40%]">
+						{/* carts */}
+						<div
+							ref={projectsRef}
+							className={`flex gap-1 w-full h-[47vh] transition-all duration-1000 ease-in-out transform ${
+								isVisibleProjects ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+							}`}
+						>
+							{projects.map((project) => (
+								<Link
+									key={project.id}
+									to={project.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="p-5 text-white font-saira font-400 w-1/2 min-w-[240px] h-full flex flex-col transition duration-300 space-y-5 group border-[1px] hover:bg-purple-600/15 hover:border-teal-600"
+								>
+									<h1 className="text-[25px] text-teal-600 group-hover:underline group-hover:decoration-wavy transition duration-300">
+										{project.title}
+									</h1>
+									<hr className="w-[100px] border-white transition-colors duration-300" />
+									<p className="text-[15px]">{project.subtitle}</p>
+									<div className="flex gap-2">
+										{project.technologies.map((icon, index) => (
+											<span key={index} className="text-[20px]">
+												{icon}
+											</span>
+										))}
+									</div>
+								</Link>
+							))}
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 
-export default Project;
+export default Projectintro;

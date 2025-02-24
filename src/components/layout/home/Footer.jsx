@@ -3,7 +3,7 @@ import ButtomP from '../../ui-ux/buttoms/ButtomP';
 
 const Footer = () => {
 	return (
-		<section className="min-h-[90vh] flex justify-center items-center px-4">
+		<section className="min-h-[100vh] flex justify-center items-center px-4">
 			<footer id="contact" className="bg-white/10 rounded-lg font-lilita min-h-[70vh] p-8">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 					{/* Information */}
@@ -62,8 +62,16 @@ const Footer = () => {
 					{/* Form */}
 					<div className="flex items-center justify-center">
 						<form className="w-full max-w-md space-y-4">
-							<input type="text" placeholder="Name" className="w-full p-2 rounded-lg bg-transparent border-[3px] text-white border-gray-300 focus:outline-none" />
-							<input type="email" placeholder="Email" className="w-full p-2 rounded-lg bg-transparent border-[3px] text-white border-gray-300 focus:outline-none" />
+							<input
+								type="text"
+								placeholder="Name"
+								className="w-full p-2 rounded-lg bg-transparent border-[3px] text-white border-gray-300 focus:outline-none"
+							/>
+							<input
+								type="email"
+								placeholder="Email"
+								className="w-full p-2 rounded-lg bg-transparent border-[3px] text-white border-gray-300 focus:outline-none"
+							/>
 							<textarea
 								placeholder="Message"
 								className="w-full p-2 rounded-lg bg-transparent border-[3px] text-white border-gray-300 focus:outline-none h-[250px]"
