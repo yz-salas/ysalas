@@ -7,10 +7,10 @@ export default {
 				center: true,
 				padding: {
 					DEFAULT: '1rem', // Ajuste base para móviles
-					sm: '2rem',
-					md: '5rem',
-					lg: '6rem',
-					xl: '8rem', // Se mantiene para pantallas grandes
+					sm: '1rem',
+					md: '2rem',
+					lg: '4rem',
+					xl: '6rem', // Se mantiene para pantallas grandes
 				},
 			},
 			fontFamily: {

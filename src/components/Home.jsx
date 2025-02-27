@@ -1,30 +1,29 @@
 import React from 'react';
-import About from './layout/home/areas/About';
-import Header from './layout/home/header';
-import Service from './layout/home/areas/Service';
-import Projectintro from './layout/home/areas/Project';
-import Project from './layout/home/areas/Projects';
-import Footer from './layout/home/Footer';
+import Header from './layout/Header';
+import Service from './layout/Service';
+import Project from './layout/Project';
+import Education from './layout/Education';
 
 const Home = () => {
 	return (
-		<div className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory">
-			<section id="home" className="h-screen w-full snap-start">
+		<div className="min-h-screen w-full flex justify-between">
+			<section id="home" className="h-screen pl-[150px] py-[80px] w-[40%] snap-start">
 				<Header />
 			</section>
-			<section id="about" className="container h-screen w-full snap-start">
-				<About />
-			</section>
-			<section id="service" className="container h-screen w-full snap-start">
-				<Service />
-			</section>
-			<section id="projects" className="container h-screen w-full snap-start">
-				<Projectintro />
-			</section>
 
-			<section id="footer" className="container h-screen w-full snap-start">
-				<Footer />
-			</section>
+			<div className="w-[50%] min-h-screen pr-28 py-[70px]">
+				<section id="service" className="w-full snap-start">
+					<Service />
+				</section>
+
+				<section id="projects" className="w-full snap-start">
+					<Project />
+				</section>
+
+				<section id="education" className="w-full snap-start">
+					<Education />
+				</section>
+			</div>
 		</div>
 	);
 };
