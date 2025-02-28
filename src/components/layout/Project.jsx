@@ -54,7 +54,7 @@ const Project = () => {
 	}, []);
 
 	return (
-		<div className="relative z-10 w-full justify-center flex flex-col min-h-screen" ref={sectionRef}>
+		<div className="relative z-10 w-full justify-center flex flex-col lg:min-h-screen" ref={sectionRef}>
 			<div className="flex flex-grow justify-center">
 				<div className="w-full flex flex-col px-8 py-[80px] justify-between items-end font-saira transition-all duration-700 ease-in-out">
 					{/* Texto */}
@@ -62,7 +62,7 @@ const Project = () => {
 						{/* carts */}
 						<div
 							ref={projectsRef}
-							className={`flex flex-col gap-1 h-[80%] w-full transition-all duration-1000 ease-in-out transform ${
+							className={`flex flex-col gap-1 min-h-[80%] w-full transition-all duration-1000 ease-in-out transform ${
 								isVisibleProjects ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
 							}`}
 						>
@@ -72,7 +72,7 @@ const Project = () => {
 									to={project.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="p-5 bg-zinc-800 group-hover:scale-75 transform text-white font-saira font-500 min-w-[200px] h-[250px] flex flex-col transition duration-300 space-y-5 group hover:bg-zinc-700 "
+									className="p-5 bg-zinc-800 group-hover:scale-75 transform text-white font-saira font-500 min-w-[200px] min-h-[260px] flex flex-col transition duration-300 space-y-5 group hover:bg-zinc-700 "
 								>
 									<h1 className="text-[25px] text-white">{project.title}</h1>
 									<hr className="w-[100px] border-white transition-colors duration-300" />

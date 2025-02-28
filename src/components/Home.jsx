@@ -6,12 +6,15 @@ import Education from './layout/Education';
 
 const Home = () => {
 	return (
-		<div className="min-h-screen w-full flex justify-between">
-			<section id="home" className="h-screen pl-[150px] py-[80px] w-[40%] snap-start">
+		<div className="min-h-screen w-full flex flex-col lg:flex-row justify-between">
+			<section
+				id="home"
+				className="h-[70vh] lg:h-screen flex justify-center items-center lg:justify-start lg:items-start lg:pl-[150px] lg:py-[80px] w-full lg:w-[40%] snap-start"
+			>
 				<Header />
 			</section>
 
-			<div className="w-[50%] min-h-screen pr-28 py-[70px]">
+			<div className="w-[100%] lg:w-[50%] min-h-screen lg:pr-28 py-[70px]">
 				<section id="service" className="w-full snap-start">
 					<Service />
 				</section>
