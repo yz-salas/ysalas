@@ -15,8 +15,8 @@ const Service = () => {
 	});
 
 	return (
-		<div ref={sectionRef} className="relative px-8 flex font-600 flex-col w-full font-saira lg:h-[90vh]">
-			<div className="relative z-10 w-full justify-center flex flex-col">
+		<div ref={sectionRef} className="relative px-8 flex font-600 flex-col w-full justify-center font-saira min-h-[70vh] lg:h-[90vh]">
+			<div className="relative z-10 w-full flex flex-col">
 				{/* Contenedor derecho con tu contenido */}
 				<div
 					ref={rightRef}
@@ -24,11 +24,8 @@ const Service = () => {
 						isRightInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
 					}`}
 				>
-					<div className="lg:h-[45%] relative">
-						<h1 className="absolute z-0 inset-0 -top-[140px] md:-top-[140px] md:-left-[10px] lg:top-[30px] lg:-left-[200px] text-white/15 text-[70px] md:text-[170px]">FRONT-END</h1>
-					</div>
-					<div className="flex flex-col h-full gap-5 w-full">
-						<div className="flex flex-col justify-end min-h-[50%] w-full space-y-10">
+					<div className="flex flex-col h-full gap-5 w-full justify-center">
+						<div className="flex flex-col justify-center w-full space-y-10">
 							<Cart1
 								title=""
 								des="With around three years of preparation in front-end development.
@@ -41,13 +38,13 @@ const Service = () => {
 						<div className="flex gap-4 mt-4 items-end">
 							<div className="flex gap-5">
 								{/* Aquí se añaden los iconos de las tecnologías */}
-								<FaHtml5 className="text-orange-500 text-[30px]" />
-								<FaCss3Alt className="text-blue-500 text-[30px]" />
-								<FaJs className="text-yellow-400 text-[30px]" />
-								<FaPhp className="text-indigo-500 text-[30px]" />
-								<FaReact className="text-cyan-400 text-[30px]" />
-								<FaGitAlt className="text-red-500 text-[30px]" />
-								<FaGithub className="text-gray-900 text-[30px]" />
+								<FaHtml5 className="text-orange-500 text-[20px] md:text-[30px]" />
+								<FaCss3Alt className="text-blue-500 text-[20px] md:text-[30px]" />
+								<FaJs className="text-yellow-400 text-[20px] md:text-[30px]" />
+								<FaPhp className="text-indigo-500 text-[20px] md:text-[30px]" />
+								<FaReact className="text-cyan-400 text-[20px] md:text-[30px]" />
+								<FaGitAlt className="text-red-500 text-[20px] md:text-[30px]" />
+								<FaGithub className="text-white text-[20px] md:text-[30px]" />
 							</div>
 						</div>
 					</div>

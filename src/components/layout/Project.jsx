@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaCss3Alt, FaPhp } from 'react-icons/fa';
-import { SiTailwindcss } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaPhp } from 'react-icons/fa';
+import { SiJavascript, SiReact, SiTailwindcss } from 'react-icons/si';
 
 const projects = [
 	{
@@ -11,6 +11,8 @@ const projects = [
 			'My First Website Developed In Php, Tailwind.css, And Mysql, This Being My First Website I Was Able To Finish It After One Or Two Months',
 		url: 'https://aoscorporation.com/src/main.php',
 		technologies: [<FaPhp className="text-indigo-500" />, <SiTailwindcss className="text-blue-400" />],
+		fecha1: '2024',
+		fecha2: '2025',
 	},
 	{
 		id: 2,
@@ -19,6 +21,23 @@ const projects = [
 			'This is my second website developed in Php, Css, Tailwind, Mysql, at the time I created this app I already had some more experience and it is reflected in the website, its design and functionality speak for themselves.',
 		url: 'https://delfinespark.com/src/main.php',
 		technologies: [<FaPhp className="text-indigo-500" />, <FaCss3Alt className="text-blue-500" />, <SiTailwindcss className="text-blue-400" />],
+		fecha1: '2024',
+		fecha2: '2025',
+	},
+	{
+		id: 3,
+		title: 'App Salas',
+		subtitle: 'The project I am referring to is this same portfolio, it is developed in html, css, javaScript, tailwind, react',
+		url: 'https://yz-salas.github.io/ysalas/',
+		technologies: [
+			<FaHtml5 className="text-orange-500" />,
+			<FaCss3Alt className="text-blue-500" />,
+			<SiJavascript className="text-yellow-400" />,
+			<SiTailwindcss className="text-blue-400" />,
+			<SiReact className="text-blue-600" />,
+		],
+		fecha1: '2025',
+		fecha2: '2026',
 	},
 ];
 
@@ -54,15 +73,15 @@ const Project = () => {
 	}, []);
 
 	return (
-		<div className="relative z-10 w-full justify-center flex flex-col lg:min-h-screen" ref={sectionRef}>
+		<div className="relative w-full justify-center flex flex-col lg:min-h-screen" ref={sectionRef}>
 			<div className="flex flex-grow justify-center">
-				<div className="w-full flex flex-col px-8 py-[80px] justify-between items-end font-saira transition-all duration-700 ease-in-out">
+				<div className="w-full flex flex-col px-8 justify-center items-end transition-all duration-700 ease-in-out">
 					{/* Texto */}
 					<div className="relative">
 						{/* carts */}
 						<div
 							ref={projectsRef}
-							className={`flex flex-col gap-1 min-h-[80%] w-full transition-all duration-1000 ease-in-out transform ${
+							className={`flex flex-col gap-1 min-h-[80%] w-full space-y-5 transition-all duration-1000 ease-in-out transform ${
 								isVisibleProjects ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
 							}`}
 						>
@@ -72,17 +91,26 @@ const Project = () => {
 									to={project.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="p-5 bg-zinc-800 group-hover:scale-75 transform text-white font-saira font-500 min-w-[200px] min-h-[260px] flex flex-col transition duration-300 space-y-5 group hover:bg-zinc-700 "
+									className="p-5 group transform font-500 min-w-[200px] min-h-[200px] flex flex-col lg:flex-row gap-5 lg:gap-0  transition duration-300 space-x-5 font-ubuntu relative overflow-hidden text-slate-500 rounded-lg hover:bg-gray-500/15 hover:bg-opacity-10"
 								>
-									<h1 className="text-[25px] text-white">{project.title}</h1>
-									<hr className="w-[100px] border-white transition-colors duration-300" />
-									<p className="text-[15px]">{project.subtitle}</p>
-									<div className="flex gap-2">
-										{project.technologies.map((icon, index) => (
-											<span key={index} className="text-[25px]">
-												{icon}
-											</span>
-										))}
+									<div className="w-[25%] h-full pl-5 lg:p-0">
+										<div className="flex items-center text-white space-x-1 text-[14px]">
+											<span>{project.fecha1}</span>
+											<div className="transition-all h-[1px] duration-300 ease-in-out w-[15px] bg-white"></div>
+											<span>{project.fecha2}</span>
+										</div>
+									</div>
+
+									<div className="w-[75%] m-0 space-y-5 h-full">
+										<h1 className="text-[16px] text-white">{project.title}</h1>
+										<p className="text-[13px] md:text-[20px] lg:text-[15px]">{project.subtitle}</p>
+										<div className="flex gap-2">
+											{project.technologies.map((icon, index) => (
+												<span key={index} className="text-[20px]">
+													{icon}
+												</span>
+											))}
+										</div>
 									</div>
 								</Link>
 							))}
