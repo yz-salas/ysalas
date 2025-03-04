@@ -73,9 +73,9 @@ const Project = () => {
 	}, []);
 
 	return (
-		<div className="relative w-full justify-center flex flex-col lg:min-h-screen" ref={sectionRef}>
+		<div className="relative w-full justify-center p-5 flex flex-col lg:min-h-screen" ref={sectionRef}>
 			<div className="flex flex-grow justify-center">
-				<div className="w-full flex flex-col px-8 justify-center items-end transition-all duration-700 ease-in-out">
+				<div className="w-full flex flex-col justify-center items-end transition-all duration-700 ease-in-out">
 					{/* Texto */}
 					<div className="relative">
 						{/* carts */}
@@ -94,16 +94,16 @@ const Project = () => {
 									className="p-5 group transform font-500 min-w-[200px] min-h-[200px] flex flex-col lg:flex-row gap-5 lg:gap-0  transition duration-300 space-x-5 font-ubuntu relative overflow-hidden text-slate-500 rounded-lg hover:bg-gray-500/15 hover:bg-opacity-10"
 								>
 									<div className="w-[25%] h-full pl-5 lg:p-0">
-										<div className="flex items-center text-white space-x-1 text-[14px]">
+										<div className="flex items-center text-teal-500 space-x-1 text-[14px]">
 											<span>{project.fecha1}</span>
-											<div className="transition-all h-[1px] duration-300 ease-in-out w-[15px] bg-white"></div>
+											<div className="transition-all h-[1px] duration-300 ease-in-out w-[15px] bg-teal-500"></div>
 											<span>{project.fecha2}</span>
 										</div>
 									</div>
 
 									<div className="w-[75%] m-0 space-y-5 h-full">
 										<h1 className="text-[16px] text-white">{project.title}</h1>
-										<p className="text-[13px] md:text-[20px] lg:text-[15px]">{project.subtitle}</p>
+										<p className="text-[16px] md:text-[25px] lg:text-[16px]">{project.subtitle}</p>
 										<div className="flex gap-2">
 											{project.technologies.map((icon, index) => (
 												<span key={index} className="text-[20px]">

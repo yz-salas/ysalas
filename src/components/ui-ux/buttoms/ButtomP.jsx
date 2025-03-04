@@ -11,7 +11,7 @@ function ButtomP({ url, title, colorletter, color, number, isActive }) {
 					></div>
 					{/* div rallita */}
 					<p
-						className={`tracking-widest text-[13px] transition-all duration-300 ease-in-out ${
+						className={`tracking-widest text-[13px] transition-all duration-300 ease-in-out uppercase ${
 							isActive ? 'text-white ' : 'group-hover:text-white'
 						} group-hover:text-${colorletter}`}
 					>
