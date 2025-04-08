@@ -14,11 +14,9 @@ export default {
 				},
 			},
 			fontFamily: {
-				exo2: ['"Exo 2"', 'serif'],
-				lilita: ['"Lilita One"', 'serif'],
-				bebas: ['"Bebas Neue"', 'sans-serif'],
-				saira: ['"Saira Condensed"', 'serif'],
 				ubuntu: ['"Ubuntu"', 'serif'],
+				Erode: ['"Erode"', 'sans-serif'],
+				Outfit: ['"Outfit"', 'sans-serif'],
 			},
 			fontWeight: {
 				100: 100,

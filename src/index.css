@@ -3,5 +3,40 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
+}
+
+@font-face {
+	font-family: 'Erode';
+	src: url('/src/assets/Erode_Complete/Fonts/OTF/Erode-Regular.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Outfit';
+	src: url('/src/assets/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Outfit';
+	src: url('/src/assets/Outfit_Complete/Fonts/OTF/Outfit-Bold.otf') format('opentype');
+	font-weight: 900;
+	font-style: bold;
+}
+
+@font-face {
+	font-family: 'Outfit';
+	src: url('/src/assets/Outfit_Complete/Fonts/OTF/Outfit-SemiBold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Outfit';
+	src: url('/src/assets/Outfit_Complete/Fonts/OTF/Outfit-Light.otf') format('opentype');
+	font-weight: 100;
+	font-style: light;
 }

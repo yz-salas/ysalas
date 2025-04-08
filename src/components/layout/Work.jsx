@@ -41,7 +41,7 @@ const projects = [
 	},
 ];
 
-const Project = () => {
+const Work = () => {
 	const sectionRef = useRef(null);
 	const textRef = useRef(null);
 	const projectsRef = useRef(null);
@@ -122,4 +122,4 @@ const Project = () => {
 	);
 };
 
-export default Project;
+export default Work;

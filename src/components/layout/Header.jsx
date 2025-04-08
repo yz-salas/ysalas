@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaHtml5, FaCss3Alt, FaJs, FaPhp, FaReact, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub, FaCodepen } from 'react-icons/fa';
 import ButtomP from '../ui-ux/buttoms/ButtomP';
 
 const Header = ({ sections }) => {
@@ -30,34 +30,49 @@ const Header = ({ sections }) => {
 	}, [aboutRef, projectsRef, experienceRef]);
 
 	return (
-		<header className="lg:z-10 lg:fixed w-full lg:w-[35%] font-600 px-5 lg:px-8 space-y-6 h-[60vh] lg:h-[100vh] flex flex-col transition-opacity duration-500 ease-in-out justify-center items-center lg:justify-start lg:items-start text-slate-200 font-ubuntu">
-			<div className="space-y-5 z-10 flex flex-col justify-center lg:justify-start lg:items-start">
-				<div className="flex flex-col md:items-start w-full lg:w-auto">
-					<div className="transition-opacity duration-500 opacity-100">
-						<div className="text-[50px] md:text-[90px] lg:text-[60px] ">Zadiel Salas</div>
+		<header className="lg:z-10 lg:fixed font-600 lg:h-screen px-5 lg:p-0 space-y-6 flex flex-col transition text-[20px]-opacity duration-500 ease-in-out text-slate-200 justify-between items-center lg:justify-between lg:items-start font-Outfit">
+			<div className="space-y-[10px] z-10 flex flex-col h-[45vh] lg:justify-between lg:items-start">
+				<div className="flex flex-col md:items-start space-y-[5px] w-full lg:w-auto">
+					<div className="transition text-[20px]-opacity duration-500 opacity-100">
+						<div className="text-[50px] md:text-[90px] lg:text-[50px] tracking-tight font-700">Yony Zadiel Salas</div>
 					</div>
-					<div className="transition-opacity duration-500 opacity-100">
-						<div className="text-[20px] md:text-[30px] lg:text-[20px] font-500">Front-End Developer</div>
+
+					<div className="transition text-[20px]-opacity duration-500 opacity-100">
+						<div className="text-[20px] md:text-[30px] lg:text-[21px] font-400 tracking-tight">Front End Developer</div>
+					</div>
+
+					<div className="w-full lg:w-[70%] font-100">
+						<div className="text-[16px] lg:text-start md:text-[25px] lg:text-[18px] tracking-tight">
+							<p className="w-full text-slate-400">I create minimalist, interactive and scalable websites.</p>
+						</div>
 					</div>
 				</div>
 
-				<div className="flex-[2] space-y-6 w-full lg:w-[60%] mb-20">
-					<div className="text-[16px] lg:text-start md:text-[25px] lg:text-[15px] space-y-3">
-						<p className="w-full text-slate-500">I create front-end websites, my design style is based on a clean and minimalist interface.</p>
-					</div>
-				</div>
-
-				<div className="hidden lg:flex flex-col gap-5 py-10">
+				<div className="hidden lg:flex flex-col gap-5">
 					<div className="flex-1 flex w-[355px]">
-						<ButtomP title="ABOUT ME" url="#About" isActive={activeSection === 'About'} />
+						<ButtomP title="ABOUT" url="#home" isActive={activeSection === 'About'} />
 					</div>
 					<div className="flex-1 flex w-[355px] items-center">
 						<ButtomP title="EXPERIENCE" url="#experience" isActive={activeSection === 'experience'} />
 					</div>
 					<div className="flex-1 flex w-[355px] items-center">
-						<ButtomP title="PROJECTS" url="#projects" isActive={activeSection === 'projects'} />
+						<ButtomP title="WORKS" url="#projects" isActive={activeSection === 'projects'} />
 					</div>
 				</div>
+			</div>
+			<div className="h-[30vh] w-full flex space-x-[10px]">
+				<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="transition text-[23px] text-slate-400">
+					<FaInstagram />
+				</a>
+				<a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="transition text-[23px] text-slate-400">
+					<FaLinkedin />
+				</a>
+				<a href="https://github.com" target="_blank" rel="noopener noreferrer" className=" transition text-[23px] text-slate-400">
+					<FaGithub />
+				</a>
+				<a href="https://codepen.io" target="_blank" rel="noopener noreferrer" className="w-400 transition text-[23px] text-slate-400">
+					<FaCodepen />
+				</a>
 			</div>
 		</header>
 	);
