@@ -73,16 +73,6 @@ const Header = ({ sections }) => {
 				<a href="https://codepen.io" target="_blank" rel="noopener noreferrer" className="w-400 transition text-[23px] text-slate-400">
 					<FaCodepen />
 				</a>
-				<div>
-					<a
-						href="https://codepen.io"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="w-400 transition text-[23px] text-slate-400 text-teal-300"
-					>
-						Z
-					</a>
-				</div>
 			</div>
 		</header>
 	);
