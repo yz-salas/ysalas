@@ -30,8 +30,8 @@ const Header = ({ sections }) => {
 	}, [aboutRef, projectsRef, experienceRef]);
 
 	return (
-		<header className="lg:z-10 lg:fixed font-600 lg:h-screen px-5 lg:p-0 space-y-6 flex flex-col transition text-[20px]-opacity duration-500 ease-in-out text-slate-200 justify-between items-center lg:justify-between lg:items-start font-Outfit">
-			<div className="space-y-[10px] z-10 flex flex-col h-[45vh] lg:justify-between lg:items-start">
+		<header className="lg:z-10 lg:fixed font-600 lg:h-screen lg:px-5 lg:p-0 space-y-6 flex flex-col transition text-[20px]-opacity duration-500 ease-in-out text-slate-200 items-center lg:justify-between lg:items-start font-Outfit">
+			<div className="space-y-[10px] z-10 flex flex-col lg:h-[45vh] lg:justify-between lg:items-start">
 				<div className="flex flex-col md:items-start space-y-[5px] w-full lg:w-auto">
 					<div className="transition text-[20px]-opacity duration-500 opacity-100">
 						<div className="text-[50px] md:text-[90px] lg:text-[50px] tracking-tight font-700">Zadiel Salas</div>
@@ -60,7 +60,7 @@ const Header = ({ sections }) => {
 					</div>
 				</div>
 			</div>
-			<div className="h-[30vh] w-full flex space-x-[10px]">
+			<div className="lg:h-[30vh] w-full flex space-x-[10px]">
 				<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="transition text-[23px] text-slate-400">
 					<FaInstagram />
 				</a>

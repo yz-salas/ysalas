@@ -13,12 +13,9 @@ const Home = () => {
 	return (
 		<div
 			id="Home"
-			className="lg:min-h-screen mx-auto min-h-screen max-w-screen-xl px-6 font-sans md:px-12 lg:py-0 w-full flex flex-col lg:flex-row justify-between"
+			className="lg:min-h-screen mx-auto min-h-screen max-w-screen-xl px-6 font-sans md:px-12 pb-[80px] lg:py-0 w-full flex flex-col lg:flex-row justify-between"
 		>
-			<section
-				id="home"
-				className="lg:h-screen flex justify-center items-center lg:justify-start lg:items-start lg:py-[93px] lg:w-[47.5%] snap-start"
-			>
+			<section id="home" className="lg:h-screen flex pt-[30px]  lg:py-[93px] lg:w-[47.5%] snap-start">
 				<Header sections={{ aboutRef, experienceRef, projectsRef }} />
 			</section>
 

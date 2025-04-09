@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
 	return (
-		<div className="flex font-Outfit font-100 flex-col items-center w-full lg:min-h-[100vh]">
+		<div className="flex font-Outfit font-100 flex-col items-center w-full lg:min-h-[70vh]">
 			<div className="relative z-10 w-full flex flex-col">
 				{/* Contenedor derecho con tu contenido */}
 				<div className={`w-full flex flex-col gap-10 transition-all duration-700 ease-in-out`}>
