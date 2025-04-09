@@ -60,7 +60,7 @@ const Header = ({ sections }) => {
 					</div>
 				</div>
 			</div>
-			<div className="lg:h-[30vh] w-full flex space-x-[10px]">
+			<div className="lg:h-[30vh] w-full flex space-x-[100px]">
 				<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="transition text-[23px] text-slate-400">
 					<FaInstagram />
 				</a>
@@ -73,6 +73,16 @@ const Header = ({ sections }) => {
 				<a href="https://codepen.io" target="_blank" rel="noopener noreferrer" className="w-400 transition text-[23px] text-slate-400">
 					<FaCodepen />
 				</a>
+				<div>
+					<a
+						href="https://codepen.io"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="w-400 transition text-[23px] text-slate-400 text-teal-300"
+					>
+						Z
+					</a>
+				</div>
 			</div>
 		</header>
 	);

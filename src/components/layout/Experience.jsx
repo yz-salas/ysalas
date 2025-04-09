@@ -12,26 +12,26 @@ const Experience = () => {
 			id: 1,
 			title: 'Diploma in web programming with JavaScript',
 			img: img2,
-			subtitle:
-				'My First Website Developed In Php, Tailwind.css, And Mysql, This Being My First Website I Was Able To Finish It After One Or Two Months',
-			url: 'https://aoscorporation.com/src/main.php',
+			subtitle: 'During these 3 months we learned the basics of JavaScript, we worked with express html, css, and JavaScript',
+			technologies: ['Html & Css', 'JavaScript'],
 			fecha: '2024 — 2025',
 		},
 		{
 			id: 2,
-			title: 'General information app about the · Delfines Park water park',
+			title: 'Theoretical and practical course on manipulating code with JavaScript',
 			img: img1,
 			subtitle:
-				'This is my second website developed in Php, Css, Tailwind, Mysql, at the time I created this app I already had some more experience and it is reflected in the website, its design and functionality speak for themselves.',
-			url: 'https://delfinespark.com/src/main.php',
+				'During the 3 months of this course we cover both theoretical and practical topics, with good practices on how to manipulate the DOM correctly with JavaScript, HTML and CSS.',
+			technologies: ['Html & Css', 'JavaScript'],
 			fecha: '2024 — 2025',
 		},
 		{
 			id: 3,
-			title: 'This App',
+			title: 'Introduction to programming with Python and JavaScript',
 			img: img3,
 			subtitle:
-				'My personal website to upload my projects and so you can see my work, experience, and get to know me a little better. It is developed in HTML, CSS, JavaScript, React, Tailwind, and uses some libraries such as Router-Router-Dom and React-Icon.',
+				'During the 2 months of this course we learned through theory and practice the basics of programming, data types, functions, arrays, objects, variables, loops, conditionals, and error handling with try - catch.',
+			technologies: ['Data types', 'Funciones', 'Arrays', 'Objects', 'Variables', 'loops', 'Conditionals', 'error handling with try - catch'],
 			url: 'https://yz-salas.github.io/ysalas/',
 			fecha: '2025 — 2026',
 		},
@@ -111,6 +111,15 @@ const Experience = () => {
 													<p className="flex justify-center items-center">{project.refIcon}</p>
 													<p>{project.reftitle}</p>
 												</a>
+												<ul className="mt-2 flex flex-wrap">
+													{project.technologies.map((icon, index) => (
+														<li key={index} className="mr-1.5 mt-2">
+															<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-500 leading-5 text-teal-300 ">
+																{icon}
+															</div>
+														</li>
+													))}
+												</ul>
 											</div>
 										</h3>
 									</div>
