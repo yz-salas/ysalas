@@ -60,7 +60,7 @@ const Header = ({ sections }) => {
 					</div>
 				</div>
 			</div>
-			<div className="lg:h-[30vh] w-full flex space-x-[100px]">
+			<div className="lg:h-[30vh] w-full flex space-x-[10px]">
 				<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="transition text-[23px] text-slate-400">
 					<FaInstagram />
 				</a>
