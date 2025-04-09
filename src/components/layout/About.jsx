@@ -19,7 +19,7 @@ const About = () => {
 								solid functionality to create seamless experiences{' '}
 								<a
 									href="#experience"
-									className="text-white hover:text-teal-500 hover:decoration-solid hover:underline transition duration-500 text-[15px]"
+									className="text-white hover:text-teal-500 transition duration-100 text-[15px]"
 								>
 									I am passionate about turning ideas into reality, one line of code at a time.
 								</a>
@@ -36,7 +36,7 @@ const About = () => {
 								practices, optimizing performance, and structuring components effectively to build{' '}
 								<a
 									href="#projects"
-									className="text-white hover:text-teal-500 hover:decoration-solid hover:underline transition duration-500 text-[15px]"
+									className="text-white hover:text-teal-500 transition duration-100 text-[15px]"
 								>
 									scalable and maintainable applications.
 								</a>
@@ -46,7 +46,7 @@ const About = () => {
 								My goal is to keep growing as a developer, staying up to date with{' '}
 								<a
 									href="#experience"
-									className="text-white hover:text-teal-500 hover:decoration-solid hover:underline transition duration-500 text-[15px]"
+									className="text-white hover:text-teal-500 transition duration-100 text-[15px]"
 								>
 									the latest technologies
 								</a>{' '}

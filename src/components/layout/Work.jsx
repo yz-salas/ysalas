@@ -1,9 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHtml5, FaCss3Alt, FaPhp } from 'react-icons/fa';
-import { SiJavascript, SiReact, SiTailwindcss } from 'react-icons/si';
-import CartV2 from '../ui-ux/carts/CartV2';
-import { p } from 'framer-motion/client';
 
 const projects = [
 	{

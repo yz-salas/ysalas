@@ -53,7 +53,7 @@ const Header = ({ sections }) => {
 						<ButtomP title="ABOUT" url="#home" isActive={activeSection === 'About'} />
 					</div>
 					<div className="flex-1 flex w-[355px] items-center">
-						<ButtomP title="EXPERIENCE" url="#experience" isActive={activeSection === 'experience'} />
+						<ButtomP title="PREPARATION" url="#experience" isActive={activeSection === 'experience'} />
 					</div>
 					<div className="flex-1 flex w-[355px] items-center">
 						<ButtomP title="WORKS" url="#projects" isActive={activeSection === 'projects'} />
