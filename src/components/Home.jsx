@@ -22,7 +22,7 @@ const Home = () => {
 				<Header sections={{ aboutRef, experienceRef, projectsRef }} />
 			</section>
 
-			<div className="w-[100%] lg:w-[51%] min-h-screen flex flex-col gap-[59px] py-24 lg:gap-0">
+			<div className="w-[100%] lg:w-[51%] min-h-screen flex flex-col gap-[59px] pt-24 lg:gap-0">
 				<section id="About" ref={aboutRef} className="w-full snap-start">
 					<About />
 				</section>

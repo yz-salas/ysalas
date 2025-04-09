@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const Spotlight = ({ children, spotlightColor = 'rgba(255, 255, 255, 0.15)' }) => {
+const Spotlight = ({ children, spotlightColor = 'rgba(29, 78, 216, 0.20)' }) => {
 	const [position, setPosition] = useState({ x: -100, y: -100 });
 
 	useEffect(() => {
@@ -13,11 +13,11 @@ const Spotlight = ({ children, spotlightColor = 'rgba(255, 255, 255, 0.15)' }) =
 	}, []);
 
 	return (
-		<div className="relative min-h-screen w-full bg-blue-950/10 overflow-hidden">
+		<div className="relative min-h-screen w-full overflow-hidden">
 			<div
 				className="pointer-events-none fixed inset-0"
 				style={{
-					background: `radial-gradient(circle 200px at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
+					background: `radial-gradient(circle 600px at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
 				}}
 			></div>
 

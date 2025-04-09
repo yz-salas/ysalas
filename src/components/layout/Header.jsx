@@ -34,7 +34,7 @@ const Header = ({ sections }) => {
 			<div className="space-y-[10px] z-10 flex flex-col h-[45vh] lg:justify-between lg:items-start">
 				<div className="flex flex-col md:items-start space-y-[5px] w-full lg:w-auto">
 					<div className="transition text-[20px]-opacity duration-500 opacity-100">
-						<div className="text-[50px] md:text-[90px] lg:text-[50px] tracking-tight font-700">Yony Zadiel Salas</div>
+						<div className="text-[50px] md:text-[90px] lg:text-[50px] tracking-tight font-700">Zadiel Salas</div>
 					</div>
 
 					<div className="transition text-[20px]-opacity duration-500 opacity-100">

@@ -2,88 +2,54 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHtml5, FaCss3Alt, FaPhp } from 'react-icons/fa';
 import { SiJavascript, SiReact, SiTailwindcss } from 'react-icons/si';
+import CartV2 from '../ui-ux/carts/CartV2';
+import { p } from 'framer-motion/client';
 
 const projects = [
 	{
 		id: 1,
 		title: 'AOS Corporation',
+		reftitle: 'GitHub',
+		refIcon: (
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mr-1 h-3 w-3" aria-hidden="true">
+				<path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z"></path>
+				<path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z"></path>
+			</svg>
+		),
 		subtitle:
 			'My First Website Developed In Php, Tailwind.css, And Mysql, This Being My First Website I Was Able To Finish It After One Or Two Months',
 		url: 'https://aoscorporation.com/src/main.php',
-		technologies: [<FaPhp className="text-indigo-500" />, <SiTailwindcss className="text-blue-400" />],
-		fecha1: '2024',
-		fecha2: '2025',
+		technologies: ['Php', 'Tailwind', 'Html & Css'],
+		fecha: '2024 — 2025',
 	},
 	{
 		id: 2,
-		title: 'DelfinesPark',
+		title: 'General information app about the · Delfines Park water park',
 		subtitle:
 			'This is my second website developed in Php, Css, Tailwind, Mysql, at the time I created this app I already had some more experience and it is reflected in the website, its design and functionality speak for themselves.',
 		url: 'https://delfinespark.com/src/main.php',
-		technologies: [<FaPhp className="text-indigo-500" />, <FaCss3Alt className="text-blue-500" />, <SiTailwindcss className="text-blue-400" />],
-		fecha1: '2024',
-		fecha2: '2025',
+		technologies: ['Php', 'Css', 'Tailwind'],
+		fecha: '2024 — 2025',
 	},
 	{
 		id: 3,
-		title: 'App Salas',
-		subtitle: 'The project I am referring to is this same portfolio, it is developed in html, css, javaScript, tailwind, react',
+		title: 'This App',
+		subtitle:
+			'My personal website to upload my projects and so you can see my work, experience, and get to know me a little better. It is developed in HTML, CSS, JavaScript, React, Tailwind, and uses some libraries such as Router-Router-Dom and React-Icon.',
 		url: 'https://yz-salas.github.io/ysalas/',
-		technologies: [
-			<FaHtml5 className="text-orange-500" />,
-			<FaCss3Alt className="text-blue-500" />,
-			<SiJavascript className="text-yellow-400" />,
-			<SiTailwindcss className="text-blue-400" />,
-			<SiReact className="text-blue-600" />,
-		],
-		fecha1: '2025',
-		fecha2: '2026',
+		technologies: ['Html & Css', 'JavaScript', 'React', 'Tailwind, React-Router-Dom', 'React-Icon'],
+		fecha: '2025 — 2026',
 	},
 ];
 
 const Work = () => {
-	const sectionRef = useRef(null);
-	const textRef = useRef(null);
-	const projectsRef = useRef(null);
-	const textAreaRef = useRef(null); // Nueva referencia para el área de texto
-	const [isVisibleText, setIsVisibleText] = useState(false);
-	const [isVisibleProjects, setIsVisibleProjects] = useState(false);
-	const [isVisibleTextArea, setIsVisibleTextArea] = useState(false); // Estado para el área de texto
-
-	useEffect(() => {
-		const observerOptions = { root: null, threshold: 0.3 };
-
-		const observerCallback = (entries, setState) => {
-			entries.forEach((entry) => setState(entry.isIntersecting));
-		};
-
-		const observerText = new IntersectionObserver((entries) => observerCallback(entries, setIsVisibleText), observerOptions);
-		const observerProjects = new IntersectionObserver((entries) => observerCallback(entries, setIsVisibleProjects), observerOptions);
-		const observerTextArea = new IntersectionObserver((entries) => observerCallback(entries, setIsVisibleTextArea), observerOptions);
-
-		if (textRef.current) observerText.observe(textRef.current);
-		if (projectsRef.current) observerProjects.observe(projectsRef.current);
-		if (textAreaRef.current) observerTextArea.observe(textAreaRef.current); // Observar el área de texto
-
-		return () => {
-			if (textRef.current) observerText.unobserve(textRef.current);
-			if (projectsRef.current) observerProjects.unobserve(projectsRef.current);
-			if (textAreaRef.current) observerTextArea.unobserve(textAreaRef.current); // Dejar de observar
-		};
-	}, []);
-
 	return (
-		<div className="relative w-full justify-center p-5 flex flex-col lg:min-h-screen" ref={sectionRef}>
+		<div className="relative w-full justify-center flex flex-col font-Outfit lg:min-h-screen">
 			<div className="flex flex-grow justify-center">
 				<div className="w-full flex flex-col justify-center items-end transition-all duration-700 ease-in-out">
-					{/* Texto */}
 					<div className="relative">
-						{/* carts */}
 						<div
-							ref={projectsRef}
-							className={`flex flex-col gap-1 min-h-[80%] w-full space-y-5 transition-all duration-1000 ease-in-out transform ${
-								isVisibleProjects ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-							}`}
+							className={`group/list flex flex-col gap-[12px] min-h-[80%] w-full space-y-[40px] transition-all duration-1000 ease-in-out transform `}
 						>
 							{projects.map((project) => (
 								<Link
@@ -91,26 +57,62 @@ const Work = () => {
 									to={project.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="p-5 group transform font-500 min-w-[200px] min-h-[200px] flex flex-col lg:flex-row gap-5 lg:gap-0  transition duration-300 space-x-5 font-ubuntu relative overflow-hidden text-slate-500 rounded-lg hover:bg-gray-500/15 hover:bg-opacity-10"
+									className="group relative grid pb-1 sm:grid-cols-8 sm:gap-8 md:gap-4 
+									opacity-100 transition-opacity duration-300 ease-in-out 
+									lg:group-hover/list:opacity-40 lg:hover:!opacity-100"
 								>
-									<div className="w-[25%] h-full pl-5 lg:p-0">
-										<div className="flex items-center text-teal-500 space-x-1 text-[14px]">
-											<span>{project.fecha1}</span>
-											<div className="transition-all h-[1px] duration-300 ease-in-out w-[15px] bg-teal-500"></div>
-											<span>{project.fecha2}</span>
-										</div>
-									</div>
+									{/* Fondo blur decorativo */}
+									<div className="absolute -inset-x-4 -inset-y-4 -z-10 hidden rounded-md group-hover:bg-slate-400/5 group-hover:backdrop-blur-[2px] transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-sm"></div>
 
-									<div className="w-[75%] m-0 space-y-5 h-full">
-										<h1 className="text-[16px] text-white">{project.title}</h1>
-										<p className="text-[16px] md:text-[25px] lg:text-[16px]">{project.subtitle}</p>
-										<div className="flex gap-2">
-											{project.technologies.map((icon, index) => (
-												<span key={index} className="text-[20px]">
-													{icon}
-												</span>
-											))}
-										</div>
+									{/* Fecha */}
+									<header
+										className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-400 sm:col-span-2 space-x-2"
+										aria-label="2024 to Present"
+									>
+										<span>{project.fecha}</span>
+									</header>
+
+									{/* Contenido */}
+									<div className="z-10 sm:col-span-6">
+										<h3 className="font-500 leading-snug text-slate-200">
+											<div>
+												<div className="inline-flex flex-col space-y-[5px] items-baseline font-medium leading-tight text-slate-200 group-hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
+													<span>
+														{project.title}{' '}
+														<span className="inline-block">
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 20 20"
+																fill="currentColor"
+																className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+																aria-hidden="true"
+															>
+																<path
+																	fillRule="evenodd"
+																	d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+																	clipRule="evenodd"
+																/>
+															</svg>
+														</span>
+													</span>
+												</div>
+
+												<p className="mt-2 text-[15px] font-100 leading-normal text-slate-400">{project.subtitle}</p>
+												<a href={project.url} className="hover:text-teal-300 transition duration-300 flex mt-2">
+													<p className="flex justify-center items-center">{project.refIcon}</p>
+													<p>{project.reftitle}</p>
+												</a>
+												<ul className="mt-2 flex flex-wrap">
+													{project.technologies.map((icon, index) => (
+														<li key={index} className="mr-1.5 mt-2">
+															<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-500 leading-5 text-teal-300 ">
+																{icon}
+															</div>
+														</li>
+													))}
+												</ul>
+											</div>
+										</h3>
 									</div>
 								</Link>
 							))}

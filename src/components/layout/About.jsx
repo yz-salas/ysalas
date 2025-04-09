@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../assets/img.jpeg';
 
 const About = () => {
 	return (
@@ -9,19 +8,15 @@ const About = () => {
 				<div className={`w-full flex flex-col gap-10 transition-all duration-700 ease-in-out`}>
 					<div className="flex flex-col justify-center text-slate-400">
 						<div className="text-[16px] md:text-[25px] lg:text-[16px] space-y-[20px]">
-							<p className="">My name is Zadiel Salas. I am 21 years old, and I am a self-taught front-end web developer.</p>
-
 							<p className="">
-								I have always loved the digital world, and since I was little, I have been very creative, dedicating myself to drawing, photography,
-								and enjoying nature and travel. I found the perfect field to combine all these skills that I enjoy.
+								I am a front-end developer passionate about technology and minimalist web design. I have always loved the digital world, and since I
+								was little, I have been very creative, dedicating myself to drawing, photography, and enjoying nature and travel. I found the perfect
+								field to combine all these skills that I enjoy.
 							</p>
 
 							<p className="">
 								My vision is to provide companies with modern web solutions that visually appeal to users. I believe in combining clean design and
-								solid functionality to create seamless experiences.
-							</p>
-
-							<p className="">
+								solid functionality to create seamless experiences{' '}
 								<a
 									href="#experience"
 									className="text-white hover:text-teal-500 hover:decoration-solid hover:underline transition duration-500 text-[15px]"
