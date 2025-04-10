@@ -5,7 +5,7 @@ function ButtomP({ url, title, colorletter, color, number, isActive }) {
 		<div>
 			<a
 				href={url}
-				className="flex items-center cursor-pointer transition-all ease-in-out duration-100 text-slate-400 gap-5 group min-w-[50%] font-Outfit font-600"
+				className="flex items-center cursor-pointer transition-all ease-in-out duration-100 text-slate-400 gap-5 group min-w-[50%] font-Outfit font-400"
 			>
 				<div className="flex items-center gap-5">
 					{/* div rallita */}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import resume from '../../../public/cv.jpg';
 import img1 from '../../assets/platzy.jpg';
 import img2 from '../../assets/diplomadojs.jpg';
 import img3 from '../../assets/introduction.jpg';
+import Encabezado from '../ui-ux/Encabezado';
 
 const Experience = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
@@ -51,17 +53,22 @@ const Experience = () => {
 		<div className="relative w-full justify-center flex flex-col mt-[50px] mb-[100px] font-Outfit lg:min-h-[80vh]">
 			<div className="flex flex-grow justify-center">
 				<div className="w-full flex flex-col justify-center items-end transition-all duration-700 ease-in-out">
-					<div className="flex flex-col justify-between relative">
+					<div className="flex flex-col justify-between space-y-[30px] relative">
+						<Encabezado title="PREPARATION"/>
 						<div
 							className={`group/list flex flex-col gap-[12px] min-h-[80%] w-full space-y-[40px] transition-all duration-1000 ease-in-out transform `}
 						>
 							{projects.map((project) => (
-								<Link
+								<div
+									onClick={(e) => {
+										e.preventDefault(); // Evita que se abra el link al hacer clic en la imagen
+										setSelectedImage(project.img);
+									}}
 									key={project.id}
 									to={project.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative grid pb-1 sm:grid-cols-8 sm:gap-8 md:gap-4 
+									className="group relative grid pb-1 cursor-pointer sm:grid-cols-8 sm:gap-8 md:gap-4 
 											opacity-100 transition-opacity duration-300 ease-in-out 
 											lg:group-hover/list:opacity-40 lg:hover:!opacity-100"
 								>
@@ -74,10 +81,6 @@ const Experience = () => {
 										<img
 											src={project.img}
 											alt={project.title}
-											onClick={(e) => {
-												e.preventDefault(); // Evita que se abra el link al hacer clic en la imagen
-												setSelectedImage(project.img);
-											}}
 											className="cursor-pointer rounded-md shadow-md w-[120px] h-[80px] object-cover transition duration-300 hover:scale-105"
 										/>
 									</header>
@@ -123,15 +126,16 @@ const Experience = () => {
 											</div>
 										</h3>
 									</div>
-								</Link>
+								</div>
 							))}
 						</div>
 						<div className="flex items-center mt-12 group">
 							<a
-								href="#"
+								href={resume} // Usa la ruta correcta a tu imagen
+								download="My-Resume.png" // Nombre con el que se descargará
 								className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base"
 							>
-								<span>View Full Résumé</span>
+								<span>Download Résumé</span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 20 20"

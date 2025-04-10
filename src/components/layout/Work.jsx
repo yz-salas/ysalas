@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Encabezado from '../ui-ux/Encabezado';
 
 const projects = [
 	{
@@ -36,7 +37,8 @@ const Work = () => {
 		<div className="relative w-full justify-center flex flex-col font-Outfit lg:min-h-screen">
 			<div className="flex flex-grow justify-center">
 				<div className="w-full flex flex-col justify-center items-end transition-all duration-700 ease-in-out">
-					<div className="relative">
+					<div className="relative space-y-[30px]">
+						<Encabezado title="WORKS"/>
 						<div
 							className={`group/list flex flex-col gap-[12px] min-h-[80%] w-full space-y-[40px] transition-all duration-1000 ease-in-out transform `}
 						>
