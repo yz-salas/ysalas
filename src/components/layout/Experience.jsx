@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import resume from '../../../public/cv.jpg';
 import img1 from '../../assets/platzy.jpg';
 import img2 from '../../assets/diplomadojs.jpg';
@@ -54,7 +53,7 @@ const Experience = () => {
 			<div className="flex flex-grow justify-center">
 				<div className="w-full flex flex-col justify-center items-end transition-all duration-700 ease-in-out">
 					<div className="flex flex-col justify-between space-y-[30px] relative">
-						<Encabezado title="PREPARATION"/>
+						<Encabezado title="PREPARATION" />
 						<div
 							className={`group/list flex flex-col gap-[12px] min-h-[80%] w-full space-y-[40px] transition-all duration-1000 ease-in-out transform `}
 						>
